@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/RandomSound.wav-8d2ad9b17e6e7e44be21079680824b58.sample"
+
+[deps]
+
+source_file="res://jam assets/sounds/RandomSound.wav"
+dest_files=[ "res://.import/RandomSound.wav-8d2ad9b17e6e7e44be21079680824b58.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

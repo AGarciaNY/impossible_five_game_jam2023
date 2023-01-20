@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/GlassBottle.wav-488a616af01cf12ac960c68d2957d4ba.sample"
+
+[deps]
+
+source_file="res://jam assets/sounds/GlassBottle.wav"
+dest_files=[ "res://.import/GlassBottle.wav-488a616af01cf12ac960c68d2957d4ba.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
