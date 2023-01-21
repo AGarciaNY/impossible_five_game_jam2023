@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
 const ACCELERATION = 500
-const MAX_SPEED = 80
-const FRICTION = 1000
+const MAX_SPEED = 100
+const FRICTION = 800
 var velocity = Vector2.ZERO
 var isSprinting = false
 var isCrouching = false

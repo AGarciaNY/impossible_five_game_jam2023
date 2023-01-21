@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://jam assets/art/bricks.png" type="Texture" id=1]
 [ext_resource path="res://jam assets/art/coldstone.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://jam assets/art/door.png" type="Texture" id=7]
 [ext_resource path="res://jam assets/art/crate.png" type="Texture" id=8]
 [ext_resource path="res://jam assets/art/widemoore.png" type="Texture" id=9]
+[ext_resource path="res://SkeletonPlayer.tscn" type="PackedScene" id=10]
 [ext_resource path="res://jam assets/art/1circle-table.png" type="Texture" id=11]
 
 [sub_resource type="TileSet" id=1]
@@ -528,3 +529,12 @@ scale = Vector2( 1.9, 1.265 )
 texture = SubResource( 6 )
 normal_map = SubResource( 7 )
 region_rect = Rect2( 46, 27, 11, 3 )
+
+[node name="SkeletonPlayer" parent="." instance=ExtResource( 10 )]
+position = Vector2( 140.927, 353.672 )
+
+[node name="Camera2D" parent="SkeletonPlayer" index="4"]
+position = Vector2( 226.292, -549.022 )
+current = true
+
+[editable path="SkeletonPlayer"]
