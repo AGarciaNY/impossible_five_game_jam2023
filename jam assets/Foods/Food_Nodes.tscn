@@ -67,12 +67,12 @@ process_material = SubResource( 8 )
 texture = ExtResource( 1 )
 
 [node name="hamburger" type="Sprite" parent="."]
-position = Vector2( 457, 328 )
-scale = Vector2( 4.32796, 3.66923 )
+position = Vector2( 449, 317 )
+scale = Vector2( 4.56183, 3.98725 )
 texture = ExtResource( 2 )
 normal_map = SubResource( 1 )
 region_enabled = true
-region_rect = Rect2( 0, 2, 32, 29 )
+region_rect = Rect2( 0, 0, 30, 30 )
 
 [node name="magicBurgerSFX" type="AudioStreamPlayer2D" parent="hamburger"]
 position = Vector2( -98.4254, -79.5033 )
@@ -81,6 +81,6 @@ stream = ExtResource( 3 )
 autoplay = true
 
 [node name="55HotdogSauce" type="Sprite" parent="."]
-position = Vector2( 130, 386 )
-scale = Vector2( 3.9375, 4.57422 )
+position = Vector2( 129, 338.375 )
+scale = Vector2( 4, 4.46094 )
 texture = ExtResource( 4 )

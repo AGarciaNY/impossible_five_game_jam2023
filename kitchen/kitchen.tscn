@@ -9,10 +9,6 @@
 [ext_resource path="res://jam assets/art/door.png" type="Texture" id=7]
 [ext_resource path="res://jam assets/art/crate.png" type="Texture" id=8]
 [ext_resource path="res://jam assets/art/widemoore.png" type="Texture" id=9]
-
-[ext_resource path="res://kitchen/kitchen_sprites_by_flytenmiles_d8e9cja.png" type="Texture" id=10]
-[ext_resource path="res://jam assets/art/metalcrate.png" type="Texture" id=11]
-[ext_resource path="res://jam assets/art/CashRegister.png" type="Texture" id=12]
 [ext_resource path="res://SkeletonPlayer.tscn" type="PackedScene" id=10]
 [ext_resource path="res://jam assets/art/1circle-table.png" type="Texture" id=11]
 
@@ -86,7 +82,9 @@ extents = Vector2( 1325.03, 104.262 )
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 78.6038, 537.698 )
 
-[sub_resource type="AnimatedTexture" id=6]
+[sub_resource type="StreamTexture" id=6]
+flags = 4
+
 [sub_resource type="AnimatedTexture" id=7]
 
 [node name="Node" type="Node"]
@@ -499,111 +497,6 @@ shape = SubResource( 4 )
 position = Vector2( 2343.68, 406.786 )
 shape = SubResource( 5 )
 
-
-[node name="KitchenApp" type="Node2D" parent="."]
-position = Vector2( 2066, 282 )
-scale = Vector2( 5.27459, 4.90152 )
-
-[node name="Sink" type="Sprite" parent="KitchenApp"]
-scale = Vector2( 1, 1 )
-texture = ExtResource( 10 )
-normal_map = SubResource( 6 )
-region_enabled = true
-region_rect = Rect2( 3, 4, 61, 33 )
-
-[node name="kitchenTiles" type="Sprite" parent="KitchenApp"]
-position = Vector2( -3.79181, 40.1916 )
-scale = Vector2( 1.15054, 0.750482 )
-texture = ExtResource( 10 )
-normal_map = SubResource( 6 )
-region_enabled = true
-region_rect = Rect2( 4, 128, 64, 64 )
-
-[node name="kitchenTiles2" type="Sprite" parent="KitchenApp"]
-position = Vector2( -77.1624, 40.1916 )
-scale = Vector2( 1.15054, 0.750482 )
-texture = ExtResource( 10 )
-normal_map = SubResource( 6 )
-region_enabled = true
-region_rect = Rect2( 4, 128, 64, 64 )
-
-[node name="kitchenTiles3" type="Sprite" parent="KitchenApp"]
-position = Vector2( -128.143, 40.3956 )
-scale = Vector2( 0.468629, 0.750482 )
-texture = ExtResource( 10 )
-normal_map = SubResource( 6 )
-region_enabled = true
-region_rect = Rect2( 4, 128, 64, 64 )
-
-[node name="Stove" type="Sprite" parent="KitchenApp"]
-position = Vector2( -58.9619, 0.204018 )
-scale = Vector2( 1, 1 )
-texture = ExtResource( 10 )
-normal_map = SubResource( 6 )
-region_enabled = true
-region_rect = Rect2( 73, 43, 61, 33 )
-
-[node name="Plates" type="Sprite" parent="KitchenApp"]
-position = Vector2( -45.3116, -14.2813 )
-scale = Vector2( 1, 1 )
-texture = ExtResource( 10 )
-normal_map = SubResource( 6 )
-region_enabled = true
-region_rect = Rect2( 96, 89, 19, 15 )
-
-[node name="Plates2" type="Sprite" parent="KitchenApp"]
-position = Vector2( -44.3637, -7.14064 )
-scale = Vector2( 1, 1 )
-texture = ExtResource( 10 )
-normal_map = SubResource( 6 )
-region_enabled = true
-region_rect = Rect2( 96, 89, 19, 15 )
-
-[node name="Stove2" type="Sprite" parent="KitchenApp"]
-position = Vector2( -104.084, -12.6491 )
-scale = Vector2( 1, 1 )
-texture = ExtResource( 10 )
-normal_map = SubResource( 6 )
-region_enabled = true
-region_rect = Rect2( 151, 68, 33, 60 )
-
-[node name="Metalcrate" type="Sprite" parent="KitchenApp/Stove2"]
-position = Vector2( -26.1632, -22.85 )
-rotation = 3.14159
-scale = Vector2( 0.0456211, -0.0560911 )
-texture = ExtResource( 11 )
-
-[node name="Crate" type="Sprite" parent="KitchenApp/Stove2"]
-position = Vector2( -25.9603, 18.303 )
-scale = Vector2( -0.0456211, 0.0560911 )
-texture = ExtResource( 8 )
-
-[node name="Counter" type="Sprite" parent="KitchenApp/Stove2"]
-position = Vector2( -35.6426, 28.018 )
-scale = Vector2( -0.0296788, 0.0491519 )
-texture = ExtResource( 4 )
-
-[node name="Counter2" type="Sprite" parent="KitchenApp/Stove2"]
-position = Vector2( -35.6426, 53.6567 )
-scale = Vector2( -0.0371929, 0.0316881 )
-texture = ExtResource( 8 )
-
-[node name="Counter3" type="Sprite" parent="KitchenApp/Stove2"]
-position = Vector2( -36.2114, 35.2952 )
-scale = Vector2( -0.499995, 0.561848 )
-texture = ExtResource( 12 )
-flip_h = true
-
-[node name="Crate2" type="Sprite" parent="KitchenApp/Stove2"]
-position = Vector2( -26.1631, -2.44824 )
-scale = Vector2( -0.0456211, 0.0560911 )
-texture = ExtResource( 8 )
-
-[node name="Crate3" type="Sprite" parent="KitchenApp/Stove2"]
-position = Vector2( -26.1631, -2.44824 )
-scale = Vector2( -0.0456211, 0.0560911 )
-texture = ExtResource( 8 )
-
 [node name="1Circle-table" type="Sprite" parent="."]
 position = Vector2( 477, 554 )
 scale = Vector2( 0.27832, 0.213867 )
@@ -645,4 +538,3 @@ position = Vector2( 226.292, -549.022 )
 current = true
 
 [editable path="SkeletonPlayer"]
-
