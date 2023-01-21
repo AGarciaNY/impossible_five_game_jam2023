@@ -11,6 +11,7 @@ config_version=4
 [application]
 
 config/name="five"
+run/main_scene="res://jam assets/Foods/Food_Nodes.tscn"
 config/icon="res://icon.png"
 
 [gui]
