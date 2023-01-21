@@ -1,54 +1,28 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://jam assets/art/dark-green.png" type="Texture" id=1]
 [ext_resource path="res://jam assets/art/hand.png" type="Texture" id=2]
 
-[sub_resource type="VisualShaderNodeColorConstant" id=1]
-constant = Color( 0.0566651, 0.100906, 0.654266, 1 )
-
-[sub_resource type="VisualShaderNodeScalarOp" id=4]
-
-[sub_resource type="VisualShader" id=2]
-code = "shader_type spatial;
-render_mode specular_schlick_ggx, async_visible;
-
-
-
-
-void vertex() {
-// Output:0
-
-}
-
-void fragment() {
-// Color:2
-	vec3 n_out2p0 = vec3(0.056665, 0.100906, 0.654266);
-	float n_out2p1 = 1.000000;
-
-// ScalarOp:3
-	float n_in3p1 = 0.00000;
-	float n_out3p0 = dot(n_out2p0, vec3(0.333333, 0.333333, 0.333333)) + n_in3p1;
-
-// Output:0
-	NORMAL = vec3(n_out3p0);
-
-}
-
-void light() {
-// Output:0
-
-}
-"
-graph_offset = Vector2( -222.491, 143.56 )
-nodes/fragment/2/node = SubResource( 1 )
-nodes/fragment/2/position = Vector2( 0, 300 )
-nodes/fragment/3/node = SubResource( 4 )
-nodes/fragment/3/position = Vector2( 180, 280 )
-nodes/fragment/connections = PoolIntArray( 2, 0, 3, 0, 3, 0, 0, 7 )
+[sub_resource type="Shader" id=7]
+code = "shader_type canvas_item;
+uniform vec3 tint;
+uniform vec4 modulate: hint_color;
+void fragment(){
+	COLOR = texture(SCREEN_TEXTURE, SCREEN_UV);
+	COLOR.rgb = vec3(COLOR.r + COLOR.g + COLOR.b) / 3.0;
+	COLOR.rgb = (COLOR.rgb + modulate.a) / 2.0;
+//}
+//shader_type canvas_item;
+//
+//render_mode blend_mix;
+//uniform vec4 modulate: hint_color;
+//
+//void fragment() {
+//	COLOR = vec4(texture(SCREEN_TEXTURE, SCREEN_UV).rgb + modulate.rgb / 2.0, texture(TEXTURE, UV).a * modulate.a);
+//}"
 
 [sub_resource type="ShaderMaterial" id=3]
-render_priority = 1
-shader = SubResource( 2 )
+shader = SubResource( 7 )
 
 [sub_resource type="Shader" id=5]
 
@@ -56,13 +30,17 @@ shader = SubResource( 2 )
 shader = SubResource( 5 )
 
 [node name="Hand" type="Sprite"]
-modulate = Color( 0.952941, 0.92549, 0.92549, 1 )
+modulate = Color( 0.215686, 0.215686, 0.392157, 1 )
+self_modulate = Color( 0.372549, 0.101961, 0.101961, 1 )
 material = SubResource( 3 )
-position = Vector2( 284, 248 )
+position = Vector2( 412, 382 )
 scale = Vector2( 0.241146, 0.255859 )
 texture = ExtResource( 2 )
 
 [node name="Dark-green" type="Sprite" parent="."]
+modulate = Color( 0.388235, 0.913725, 0.121569, 1 )
+self_modulate = Color( 0.494118, 0.568627, 0.176471, 1 )
 material = SubResource( 6 )
-position = Vector2( 1890.97, 226.687 )
+position = Vector2( -29.0283, 179.787 )
+scale = Vector2( 0.224623, 0.178435 )
 texture = ExtResource( 1 )

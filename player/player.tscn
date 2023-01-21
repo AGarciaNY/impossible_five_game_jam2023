@@ -5,5 +5,5 @@
 [node name="KinematicBody2D" type="KinematicBody2D"]
 
 [node name="Widemoore" type="Sprite" parent="."]
-position = Vector2( 664, 263 )
+position = Vector2( 514, 276 )
 texture = ExtResource( 1 )
