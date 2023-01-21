@@ -87,7 +87,7 @@ flags = 4
 
 [sub_resource type="AnimatedTexture" id=7]
 
-[node name="Node" type="Node"]
+[node name="Node2" type="Node"]
 __meta__ = {
 "_edit_vertical_guides_": [ 2221.0 ]
 }
