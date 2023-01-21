@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://jam assets/art/bricks.png" type="Texture" id=1]
 [ext_resource path="res://jam assets/art/coldstone.png" type="Texture" id=2]
@@ -6,6 +6,9 @@
 [ext_resource path="res://jam assets/art/wood.png" type="Texture" id=4]
 [ext_resource path="res://jam assets/art/absctractional-geometric-ugliness.png" type="Texture" id=5]
 [ext_resource path="res://jam assets/art/city.png" type="Texture" id=6]
+[ext_resource path="res://jam assets/art/door.png" type="Texture" id=7]
+[ext_resource path="res://jam assets/art/crate.png" type="Texture" id=8]
+[ext_resource path="res://jam assets/art/widemoore.png" type="Texture" id=9]
 
 [sub_resource type="TileSet" id=1]
 0/name = "bricks.png 0"
@@ -66,6 +69,9 @@
 3/z_index = 0
 
 [node name="Node" type="Node"]
+__meta__ = {
+"_edit_vertical_guides_": [ 2221.0 ]
+}
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2( -32, -8 )
@@ -86,14 +92,369 @@ texture = ExtResource( 6 )
 position = Vector2( 504, 120 )
 texture = ExtResource( 5 )
 
+[node name="floor" type="Sprite" parent="."]
+position = Vector2( -80, 441 )
+rotation = 3.13626
+scale = Vector2( 0.395809, 0.182427 )
+texture = ExtResource( 2 )
+offset = Vector2( -480.656, 252.076 )
+
+[node name="Coldstone3" type="Sprite" parent="floor"]
+texture = ExtResource( 2 )
+offset = Vector2( -1612.5, 238.972 )
+
+[node name="Coldstone4" type="Sprite" parent="floor"]
+texture = ExtResource( 2 )
+offset = Vector2( -1046.58, 245.524 )
+
+[node name="Coldstone5" type="Sprite" parent="floor"]
+texture = ExtResource( 2 )
+offset = Vector2( -2179.38, 237.542 )
+
+[node name="Coldstone7" type="Sprite" parent="floor"]
+texture = ExtResource( 2 )
+offset = Vector2( -2745.3, 230.99 )
+
+[node name="Coldstone8" type="Sprite" parent="floor"]
+position = Vector2( -478.263, -76.7988 )
+texture = ExtResource( 2 )
+
+[node name="Coldstone9" type="Sprite" parent="floor"]
+position = Vector2( -1610.11, -89.9026 )
+texture = ExtResource( 2 )
+
+[node name="Coldstone10" type="Sprite" parent="floor"]
+position = Vector2( -1044.18, -83.3506 )
+texture = ExtResource( 2 )
+
+[node name="Coldstone11" type="Sprite" parent="floor"]
+position = Vector2( -2176.98, -91.3328 )
+texture = ExtResource( 2 )
+
+[node name="Coldstone13" type="Sprite" parent="floor"]
+position = Vector2( -2742.9, -97.8845 )
+texture = ExtResource( 2 )
+
+[node name="Coldstone14" type="Sprite" parent="floor"]
+position = Vector2( -600.132, -478.375 )
+texture = ExtResource( 2 )
+offset = Vector2( 117.585, 89.0691 )
+
+[node name="Coldstone15" type="Sprite" parent="floor"]
+position = Vector2( -600.132, -478.375 )
+texture = ExtResource( 2 )
+offset = Vector2( -1014.26, 75.9656 )
+
+[node name="Coldstone16" type="Sprite" parent="floor"]
+position = Vector2( -600.132, -478.375 )
+texture = ExtResource( 2 )
+offset = Vector2( -448.337, 82.5173 )
+
+[node name="Coldstone17" type="Sprite" parent="floor"]
+position = Vector2( -600.132, -478.375 )
+texture = ExtResource( 2 )
+offset = Vector2( -1581.13, 74.5352 )
+
+[node name="Coldstone19" type="Sprite" parent="floor"]
+position = Vector2( -600.132, -478.375 )
+texture = ExtResource( 2 )
+offset = Vector2( -2147.06, 67.9834 )
+
+[node name="Coldstone20" type="Sprite" parent="floor"]
+position = Vector2( -476.686, -718.141 )
+texture = ExtResource( 2 )
+
+[node name="Coldstone21" type="Sprite" parent="floor"]
+position = Vector2( -1608.53, -731.245 )
+texture = ExtResource( 2 )
+
+[node name="Coldstone22" type="Sprite" parent="floor"]
+position = Vector2( -1042.61, -724.693 )
+texture = ExtResource( 2 )
+
+[node name="Coldstone23" type="Sprite" parent="floor"]
+position = Vector2( -2175.4, -732.675 )
+texture = ExtResource( 2 )
+
+[node name="Coldstone25" type="Sprite" parent="floor"]
+position = Vector2( -2741.33, -739.227 )
+texture = ExtResource( 2 )
+
+[node name="floor2" type="Sprite" parent="."]
+position = Vector2( 1041, 441 )
+rotation = 3.13626
+scale = Vector2( 0.395809, 0.182427 )
+texture = ExtResource( 2 )
+offset = Vector2( -480.656, 252.076 )
+
+[node name="Coldstone3" type="Sprite" parent="floor2"]
+texture = ExtResource( 2 )
+offset = Vector2( -1612.5, 238.972 )
+
+[node name="Coldstone4" type="Sprite" parent="floor2"]
+texture = ExtResource( 2 )
+offset = Vector2( -1046.58, 245.524 )
+
+[node name="Coldstone5" type="Sprite" parent="floor2"]
+texture = ExtResource( 2 )
+offset = Vector2( -2179.38, 237.542 )
+
+[node name="Coldstone7" type="Sprite" parent="floor2"]
+texture = ExtResource( 2 )
+offset = Vector2( -2745.3, 230.99 )
+
+[node name="Coldstone8" type="Sprite" parent="floor2"]
+position = Vector2( -478.263, -76.7988 )
+texture = ExtResource( 2 )
+
+[node name="Coldstone9" type="Sprite" parent="floor2"]
+position = Vector2( -1610.11, -89.9026 )
+texture = ExtResource( 2 )
+
+[node name="Coldstone10" type="Sprite" parent="floor2"]
+position = Vector2( -1044.18, -83.3506 )
+texture = ExtResource( 2 )
+
+[node name="Coldstone11" type="Sprite" parent="floor2"]
+position = Vector2( -2176.98, -91.3328 )
+texture = ExtResource( 2 )
+
+[node name="Coldstone13" type="Sprite" parent="floor2"]
+position = Vector2( -2742.9, -97.8845 )
+texture = ExtResource( 2 )
+
+[node name="Coldstone14" type="Sprite" parent="floor2"]
+position = Vector2( -600.132, -478.375 )
+texture = ExtResource( 2 )
+offset = Vector2( 117.585, 89.0691 )
+
+[node name="Coldstone15" type="Sprite" parent="floor2"]
+position = Vector2( -600.132, -478.375 )
+texture = ExtResource( 2 )
+offset = Vector2( -1014.26, 75.9656 )
+
+[node name="Coldstone16" type="Sprite" parent="floor2"]
+position = Vector2( -600.132, -478.375 )
+texture = ExtResource( 2 )
+offset = Vector2( -448.337, 82.5173 )
+
+[node name="Coldstone17" type="Sprite" parent="floor2"]
+position = Vector2( -600.132, -478.375 )
+texture = ExtResource( 2 )
+offset = Vector2( -1581.13, 74.5352 )
+
+[node name="Coldstone19" type="Sprite" parent="floor2"]
+position = Vector2( -600.132, -478.375 )
+texture = ExtResource( 2 )
+offset = Vector2( -2147.06, 67.9834 )
+
+[node name="Coldstone20" type="Sprite" parent="floor2"]
+position = Vector2( -476.686, -718.141 )
+texture = ExtResource( 2 )
+
+[node name="Coldstone21" type="Sprite" parent="floor2"]
+position = Vector2( -1608.53, -731.245 )
+texture = ExtResource( 2 )
+
+[node name="Coldstone22" type="Sprite" parent="floor2"]
+position = Vector2( -1042.61, -724.693 )
+texture = ExtResource( 2 )
+
+[node name="Coldstone23" type="Sprite" parent="floor2"]
+position = Vector2( -2175.4, -732.675 )
+texture = ExtResource( 2 )
+
+[node name="Coldstone25" type="Sprite" parent="floor2"]
+position = Vector2( -2741.33, -739.227 )
+texture = ExtResource( 2 )
+
 [node name="Dark-green" type="Sprite" parent="."]
-position = Vector2( 93.2944, 281.6 )
+position = Vector2( 96, 376 )
 scale = Vector2( 0.04125, 0.17 )
 texture = ExtResource( 3 )
 offset = Vector2( -232.727, -790.589 )
 
-[node name="Coldstone" type="Sprite" parent="."]
-position = Vector2( 91.2, 288 )
-scale = Vector2( 0.139144, 0.17 )
-texture = ExtResource( 2 )
-offset = Vector2( -42.0227, -37.647 )
+[node name="Crate" type="Sprite" parent="Dark-green"]
+position = Vector2( -287.879, -134.559 )
+scale = Vector2( 6.31973, 1.3032 )
+texture = ExtResource( 8 )
+
+[node name="TileMap3" type="TileMap" parent="."]
+position = Vector2( 1102, -8 )
+scale = Vector2( 0.3, 0.4 )
+tile_set = SubResource( 1 )
+cell_size = Vector2( 63, 33 )
+collision_layer = 0
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 65535, 0, 0, 5, 0, 0, 11, 0, 0, 17, 0, 0, 23, 0, 0, 29, 0, 0, 35, 0, 0, 41, 0, 0, 47, 0, 0, 53, 0, 0, 524287, 0, 0, 458757, 0, 0, 458763, 0, 0, 458769, 0, 0, 458775, 0, 0, 458781, 0, 0, 458787, 0, 0, 458793, 0, 0, 458799, 0, 0, 458805, 0, 0, 983039, 0, 0, 917509, 0, 0, 917515, 0, 0, 917521, 0, 0, 917527, 0, 0, 917533, 0, 0, 917539, 0, 0, 917545, 0, 0, 917551, 0, 0, 917557, 0, 0, 1441791, 0, 0, 1376261, 0, 0, 1376267, 0, 0, 1376273, 0, 0, 1376279, 0, 0, 1376285, 0, 0, 1376291, 0, 0, 1376297, 0, 0, 1376303, 0, 0, 1376309, 0, 0 )
+
+[node name="Door" type="Sprite" parent="."]
+position = Vector2( -61, 453 )
+scale = Vector2( 0.181102, 0.186934 )
+texture = ExtResource( 7 )
+
+[node name="Widemoore" type="Sprite" parent="Door"]
+position = Vector2( 1.38039, -352.063 )
+scale = Vector2( 0.454693, 1.36999 )
+texture = ExtResource( 9 )
+
+[node name="Crate" type="Sprite" parent="Door"]
+modulate = Color( 0.745098, 0.545098, 0.329412, 1 )
+position = Vector2( 223.63, -1313.63 )
+scale = Vector2( 0.439378, 1.33374 )
+texture = ExtResource( 8 )
+offset = Vector2( 0, 60.163 )
+
+[node name="Crate2" type="Sprite" parent="Door"]
+modulate = Color( 0.745098, 0.545098, 0.329412, 1 )
+position = Vector2( 142.185, -925.459 )
+scale = Vector2( 0.439378, 1.33374 )
+texture = ExtResource( 8 )
+offset = Vector2( 213.642, 52.1412 )
+
+[node name="Crate4" type="Sprite" parent="Door"]
+modulate = Color( 0.745098, 0.545098, 0.329412, 1 )
+position = Vector2( -238.815, -855.916 )
+scale = Vector2( 0.439378, 1.33374 )
+texture = ExtResource( 8 )
+
+[node name="Crate5" type="Sprite" parent="Door"]
+modulate = Color( 0.745098, 0.545098, 0.329412, 1 )
+position = Vector2( -78.6848, -855.916 )
+scale = Vector2( 0.439378, 1.33374 )
+texture = ExtResource( 8 )
+
+[node name="Crate6" type="Sprite" parent="Door"]
+modulate = Color( 0.745098, 0.545098, 0.329412, 1 )
+position = Vector2( 81.4456, -855.916 )
+scale = Vector2( 0.439378, 1.33374 )
+texture = ExtResource( 8 )
+
+[node name="Crate3" type="Sprite" parent="Door"]
+modulate = Color( 0.745098, 0.545098, 0.329412, 1 )
+position = Vector2( 131.141, -1299.92 )
+scale = Vector2( 0.439378, 1.33374 )
+texture = ExtResource( 8 )
+offset = Vector2( 213.642, 52.1412 )
+
+[node name="Crate7" type="Sprite" parent="Door"]
+modulate = Color( 0.745098, 0.545098, 0.329412, 1 )
+position = Vector2( -249.859, -1230.38 )
+scale = Vector2( 0.439378, 1.33374 )
+texture = ExtResource( 8 )
+
+[node name="Crate8" type="Sprite" parent="Door"]
+modulate = Color( 0.745098, 0.545098, 0.329412, 1 )
+position = Vector2( -89.7284, -1230.38 )
+scale = Vector2( 0.439378, 1.33374 )
+texture = ExtResource( 8 )
+
+[node name="Crate9" type="Sprite" parent="Door"]
+modulate = Color( 0.745098, 0.545098, 0.329412, 1 )
+position = Vector2( 70.402, -1230.38 )
+scale = Vector2( 0.439378, 1.33374 )
+texture = ExtResource( 8 )
+
+[node name="Crate10" type="Sprite" parent="Door"]
+modulate = Color( 0.745098, 0.545098, 0.329412, 1 )
+position = Vector2( 5.52155, -2300.28 )
+scale = Vector2( 0.439378, 1.33374 )
+texture = ExtResource( 8 )
+offset = Vector2( 512.112, 513.391 )
+
+[node name="Crate11" type="Sprite" parent="Door"]
+modulate = Color( 0.745098, 0.545098, 0.329412, 1 )
+position = Vector2( 5.52151, -2300.28 )
+scale = Vector2( 0.439378, 1.33374 )
+texture = ExtResource( 8 )
+offset = Vector2( -568.664, 513.392 )
+
+[node name="Crate12" type="Sprite" parent="Door"]
+modulate = Color( 0.745098, 0.545098, 0.329412, 1 )
+position = Vector2( 5.52151, -2300.28 )
+scale = Vector2( 0.439378, 1.33374 )
+texture = ExtResource( 8 )
+offset = Vector2( -204.216, 513.391 )
+
+[node name="Crate13" type="Sprite" parent="Door"]
+modulate = Color( 0.745098, 0.545098, 0.329412, 1 )
+position = Vector2( 5.52151, -2300.28 )
+scale = Vector2( 0.439378, 1.33374 )
+texture = ExtResource( 8 )
+offset = Vector2( 160.232, 513.391 )
+
+[node name="Crate14" type="Sprite" parent="Door"]
+modulate = Color( 0.745098, 0.545098, 0.329412, 1 )
+position = Vector2( 125.62, -2075.6 )
+scale = Vector2( 0.439378, 1.33374 )
+texture = ExtResource( 8 )
+offset = Vector2( 213.642, 52.1412 )
+
+[node name="Crate15" type="Sprite" parent="Door"]
+modulate = Color( 0.745098, 0.545098, 0.329412, 1 )
+position = Vector2( -255.38, -2006.05 )
+scale = Vector2( 0.439378, 1.33374 )
+texture = ExtResource( 8 )
+
+[node name="Crate16" type="Sprite" parent="Door"]
+modulate = Color( 0.745098, 0.545098, 0.329412, 1 )
+position = Vector2( -95.2499, -2006.05 )
+scale = Vector2( 0.439378, 1.33374 )
+texture = ExtResource( 8 )
+
+[node name="Crate17" type="Sprite" parent="Door"]
+modulate = Color( 0.745098, 0.545098, 0.329412, 1 )
+position = Vector2( 64.8804, -2006.05 )
+scale = Vector2( 0.439378, 1.33374 )
+texture = ExtResource( 8 )
+
+[node name="Crate18" type="Sprite" parent="Door"]
+modulate = Color( 0.745098, 0.545098, 0.329412, 1 )
+position = Vector2( 114.576, -2460.76 )
+scale = Vector2( 0.439378, 1.33374 )
+texture = ExtResource( 8 )
+offset = Vector2( 213.642, 52.1412 )
+
+[node name="Crate19" type="Sprite" parent="Door"]
+modulate = Color( 0.745098, 0.545098, 0.329412, 1 )
+position = Vector2( -266.424, -2391.21 )
+scale = Vector2( 0.439378, 1.33374 )
+texture = ExtResource( 8 )
+
+[node name="Crate20" type="Sprite" parent="Door"]
+modulate = Color( 0.745098, 0.545098, 0.329412, 1 )
+position = Vector2( -106.293, -2391.22 )
+scale = Vector2( 0.439378, 1.33374 )
+texture = ExtResource( 8 )
+
+[node name="Crate21" type="Sprite" parent="Door"]
+modulate = Color( 0.745098, 0.545098, 0.329412, 1 )
+position = Vector2( 53.837, -2391.22 )
+scale = Vector2( 0.439378, 1.33374 )
+texture = ExtResource( 8 )
+
+[node name="Crate22" type="Sprite" parent="Door"]
+modulate = Color( 0.745098, 0.545098, 0.329412, 1 )
+position = Vector2( 164.272, 797.072 )
+scale = Vector2( 0.439378, 1.33374 )
+texture = ExtResource( 8 )
+offset = Vector2( 213.642, 52.1412 )
+
+[node name="Crate23" type="Sprite" parent="Door"]
+modulate = Color( 0.745098, 0.545098, 0.329412, 1 )
+position = Vector2( -216.728, 866.616 )
+scale = Vector2( 0.439378, 1.33374 )
+texture = ExtResource( 8 )
+
+[node name="Crate24" type="Sprite" parent="Door"]
+modulate = Color( 0.745098, 0.545098, 0.329412, 1 )
+position = Vector2( -56.5975, 866.615 )
+scale = Vector2( 0.439378, 1.33374 )
+texture = ExtResource( 8 )
+
+[node name="Crate25" type="Sprite" parent="Door"]
+modulate = Color( 0.745098, 0.545098, 0.329412, 1 )
+position = Vector2( 103.533, 866.615 )
+scale = Vector2( 0.439378, 1.33374 )
+texture = ExtResource( 8 )
