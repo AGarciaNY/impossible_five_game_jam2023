@@ -347,6 +347,17 @@ margin_right = 135.0
 margin_bottom = 43.0
 
 [connection signal="button_down" from="Ingredients/ScrollContainer/VBoxContainer/HBoxContainer/Cold Spegetti" to="." method="_on_Cold_Spegetti_button_down"]
+[connection signal="button_down" from="Ingredients/ScrollContainer/VBoxContainer/HBoxContainer/Meatball" to="." method="_on_Meatball_button_down"]
+[connection signal="button_down" from="Ingredients/ScrollContainer/VBoxContainer/HBoxContainer/Steak" to="." method="_on_Steak_button_down"]
+[connection signal="button_down" from="Ingredients/ScrollContainer/VBoxContainer/HBoxContainer2/Egg" to="." method="_on_Egg_button_down"]
+[connection signal="button_down" from="Ingredients/ScrollContainer/VBoxContainer/HBoxContainer2/Bread" to="." method="_on_Bread_button_down"]
+[connection signal="button_up" from="Ingredients/ScrollContainer/VBoxContainer/HBoxContainer2/Garlic Bread" to="." method="_on_Garlic_Bread_button_up"]
+[connection signal="button_down" from="Ingredients/ScrollContainer/VBoxContainer/HBoxContainer3/Ginger Breadman" to="." method="_on_Ginger_Breadman_button_down"]
+[connection signal="button_down" from="Ingredients/ScrollContainer/VBoxContainer/HBoxContainer3/Loaf Bread" to="." method="_on_Loaf_Bread_button_down"]
+[connection signal="button_down" from="Ingredients/ScrollContainer/VBoxContainer/HBoxContainer3/Cake" to="." method="_on_Cake_button_down"]
+[connection signal="button_down" from="Ingredients/ScrollContainer/VBoxContainer/HBoxContainer4/Cake2" to="." method="_on_Cake2_button_down"]
+[connection signal="button_down" from="Ingredients/ScrollContainer/VBoxContainer/HBoxContainer4/Cake3" to="." method="_on_Cake3_button_down"]
+[connection signal="button_down" from="Ingredients/ScrollContainer/VBoxContainer/HBoxContainer4/Cake4" to="." method="_on_Cake4_button_down"]
 
 [editable path="Ingredients/ScrollContainer/VBoxContainer/HBoxContainer/Cold Spegetti"]
 [editable path="Ingredients/ScrollContainer/VBoxContainer/HBoxContainer/Meatball"]
