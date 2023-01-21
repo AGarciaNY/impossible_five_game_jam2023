@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/1kitchen.png-9af0c8563d760aadf9a7183a1d9cb13c.stex"
+path="res://.import/kitchen_sprites_by_flytenmiles_d8e9cja.png-ee1eda0e472a052efead0fd5d08ed707.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://jam assets/art/1kitchen.png"
-dest_files=[ "res://.import/1kitchen.png-9af0c8563d760aadf9a7183a1d9cb13c.stex" ]
+source_file="res://jam assets/kitchen_sprites_by_flytenmiles_d8e9cja.png"
+dest_files=[ "res://.import/kitchen_sprites_by_flytenmiles_d8e9cja.png-ee1eda0e472a052efead0fd5d08ed707.stex" ]
 
 [params]
 

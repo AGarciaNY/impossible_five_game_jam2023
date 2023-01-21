@@ -9,9 +9,12 @@
 [ext_resource path="res://jam assets/art/door.png" type="Texture" id=7]
 [ext_resource path="res://jam assets/art/crate.png" type="Texture" id=8]
 [ext_resource path="res://jam assets/art/widemoore.png" type="Texture" id=9]
+
 [ext_resource path="res://kitchen/kitchen_sprites_by_flytenmiles_d8e9cja.png" type="Texture" id=10]
 [ext_resource path="res://jam assets/art/metalcrate.png" type="Texture" id=11]
 [ext_resource path="res://jam assets/art/CashRegister.png" type="Texture" id=12]
+[ext_resource path="res://SkeletonPlayer.tscn" type="PackedScene" id=10]
+[ext_resource path="res://jam assets/art/1circle-table.png" type="Texture" id=11]
 
 [sub_resource type="TileSet" id=1]
 0/name = "bricks.png 0"
@@ -84,6 +87,7 @@ extents = Vector2( 1325.03, 104.262 )
 extents = Vector2( 78.6038, 537.698 )
 
 [sub_resource type="AnimatedTexture" id=6]
+[sub_resource type="AnimatedTexture" id=7]
 
 [node name="Node" type="Node"]
 __meta__ = {
@@ -495,6 +499,7 @@ shape = SubResource( 4 )
 position = Vector2( 2343.68, 406.786 )
 shape = SubResource( 5 )
 
+
 [node name="KitchenApp" type="Node2D" parent="."]
 position = Vector2( 2066, 282 )
 scale = Vector2( 5.27459, 4.90152 )
@@ -598,3 +603,46 @@ texture = ExtResource( 8 )
 position = Vector2( -26.1631, -2.44824 )
 scale = Vector2( -0.0456211, 0.0560911 )
 texture = ExtResource( 8 )
+
+[node name="1Circle-table" type="Sprite" parent="."]
+position = Vector2( 477, 554 )
+scale = Vector2( 0.27832, 0.213867 )
+texture = ExtResource( 11 )
+offset = Vector2( -801.235, -84.1643 )
+
+[node name="1Circle-table2" type="Sprite" parent="."]
+position = Vector2( 592, 377 )
+scale = Vector2( 0.27832, 0.213867 )
+texture = ExtResource( 11 )
+
+[node name="1Circle-table3" type="Sprite" parent="."]
+position = Vector2( 292, 373 )
+scale = Vector2( 0.27832, 0.213867 )
+texture = ExtResource( 11 )
+
+[node name="1Circle-table4" type="Sprite" parent="."]
+position = Vector2( 773, 392 )
+scale = Vector2( 0.27832, 0.213867 )
+texture = ExtResource( 11 )
+
+[node name="1Circle-table5" type="Sprite" parent="."]
+position = Vector2( 523, 539 )
+scale = Vector2( 0.27832, 0.213867 )
+texture = ExtResource( 11 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -645, 43 )
+scale = Vector2( 1.9, 1.265 )
+texture = SubResource( 6 )
+normal_map = SubResource( 7 )
+region_rect = Rect2( 46, 27, 11, 3 )
+
+[node name="SkeletonPlayer" parent="." instance=ExtResource( 10 )]
+position = Vector2( 140.927, 353.672 )
+
+[node name="Camera2D" parent="SkeletonPlayer" index="4"]
+position = Vector2( 226.292, -549.022 )
+current = true
+
+[editable path="SkeletonPlayer"]
+
