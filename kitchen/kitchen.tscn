@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://jam assets/art/bricks.png" type="Texture" id=1]
 [ext_resource path="res://jam assets/art/coldstone.png" type="Texture" id=2]
@@ -67,6 +67,18 @@
 3/shape_one_way_margin = 0.0
 3/shapes = [  ]
 3/z_index = 0
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 1300, 200 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 79.8636, 345.46 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 1325.03, 104.262 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 78.6038, 537.698 )
 
 [node name="Node" type="Node"]
 __meta__ = {
@@ -458,3 +470,22 @@ modulate = Color( 0.745098, 0.545098, 0.329412, 1 )
 position = Vector2( 103.533, 866.615 )
 scale = Vector2( 0.439378, 1.33374 )
 texture = ExtResource( 8 )
+
+[node name="Wall Colliders" type="KinematicBody2D" parent="."]
+position = Vector2( -32, -8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall Colliders"]
+position = Vector2( 1108.34, 159.354 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Wall Colliders"]
+position = Vector2( -42.6998, 651.13 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Wall Colliders"]
+position = Vector2( 1096.34, 702.497 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Wall Colliders"]
+position = Vector2( 2343.68, 406.786 )
+shape = SubResource( 5 )
