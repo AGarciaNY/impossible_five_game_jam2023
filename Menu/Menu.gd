@@ -17,8 +17,9 @@ func _ready():
 
 
 func _on_Start_pressed():
+	var music = $Piano.play().loop();
 	get_tree().change_scene("res://kitchen/kitchen.tscn");
-
+	
 #func _on_Options_pressed():
 #	var options = load().instance()
 #	get_tree().current_scene.add_child(options)

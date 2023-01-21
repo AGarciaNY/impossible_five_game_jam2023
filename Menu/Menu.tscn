@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Menu/Menu.gd" type="Script" id=1]
 [ext_resource path="res://Menu/pdark.ttf" type="DynamicFontData" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://jam assets/art/tickMark.png" type="Texture" id=4]
 [ext_resource path="res://jam assets/art/continous-snake.png" type="Texture" id=5]
 [ext_resource path="res://jam assets/art/angryguy1.png" type="Texture" id=6]
+[ext_resource path="res://jam assets/sounds/Piano.wav" type="AudioStream" id=7]
 
 [sub_resource type="Theme" id=4]
 
@@ -102,10 +103,9 @@ flip_h = true
 
 [node name="CC7" type="Sprite" parent="Sprites"]
 modulate = Color( 0.678431, 0.105882, 0.835294, 1 )
-position = Vector2( -15090.8, -4209.64 )
-scale = Vector2( 1.21841, 1.06296 )
+position = Vector2( -14947.3, -3768.18 )
+scale = Vector2( 1.33263, 1.10173 )
 texture = ExtResource( 6 )
-flip_h = true
 
 [node name="CC3" type="Sprite" parent="Sprites"]
 position = Vector2( -12201.9, -4761.46 )
@@ -136,6 +136,10 @@ flip_h = true
 
 [node name="TM" type="Sprite" parent="Sprites"]
 texture = ExtResource( 4 )
+
+[node name="Piano" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+autoplay = true
 
 [connection signal="pressed" from="ColorRect/VBoxContainer/Start" to="." method="_on_Start_pressed"]
 [connection signal="pressed" from="ColorRect/VBoxContainer/Options" to="." method="_on_Options_pressed"]
