@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://jam assets/art/bricks.png" type="Texture" id=1]
 [ext_resource path="res://jam assets/art/coldstone.png" type="Texture" id=2]
@@ -10,7 +10,11 @@
 [ext_resource path="res://jam assets/art/crate.png" type="Texture" id=8]
 [ext_resource path="res://jam assets/art/widemoore.png" type="Texture" id=9]
 [ext_resource path="res://SkeletonPlayer.tscn" type="PackedScene" id=10]
-[ext_resource path="res://jam assets/art/1circle-table.png" type="Texture" id=11]
+[ext_resource path="res://jam assets/art/metalcrate.png" type="Texture" id=11]
+[ext_resource path="res://kitchen/kitchen_sprites_by_flytenmiles_d8e9cja.png" type="Texture" id=12]
+[ext_resource path="res://jam assets/art/CashRegister.png" type="Texture" id=13]
+[ext_resource path="res://jam assets/art/lollipops.jpg" type="Texture" id=14]
+[ext_resource path="res://jam assets/art/1circle-table.png" type="Texture" id=15]
 
 [sub_resource type="TileSet" id=1]
 0/name = "bricks.png 0"
@@ -81,6 +85,44 @@ extents = Vector2( 1325.03, 104.262 )
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 78.6038, 537.698 )
+
+[sub_resource type="Shader" id=8]
+code = "shader_type canvas_item;
+
+uniform float outline_width = 2.0;
+uniform vec4 outline_color: hint_color;
+
+void fragment() {
+	vec4 col = texture(TEXTURE, UV);
+	vec2 ps = TEXTURE_PIXEL_SIZE;
+	float a;
+	float maxa = col.a;
+	float mina = col.a;
+
+	a = texture(TEXTURE, UV + vec2(0.0, -outline_width) * ps).a;
+	maxa = max(a, maxa);
+	mina = min(a, mina);
+
+	a = texture(TEXTURE, UV + vec2(0.0, outline_width) * ps).a;
+	maxa = max(a, maxa);
+	mina = min(a, mina);
+
+	a = texture(TEXTURE, UV + vec2(-outline_width, 0.0) * ps).a;
+	maxa = max(a, maxa);
+	mina = min(a, mina);
+
+	a = texture(TEXTURE, UV + vec2(outline_width, 0.0) * ps).a;
+	maxa = max(a, maxa);
+	mina = min(a, mina);
+
+	COLOR = mix(col, outline_color, maxa - mina);
+}
+"
+
+[sub_resource type="ShaderMaterial" id=9]
+shader = SubResource( 8 )
+shader_param/outline_width = 4.0
+shader_param/outline_color = Color( 0.184314, 0.686275, 0.239216, 1 )
 
 [sub_resource type="StreamTexture" id=6]
 flags = 4
@@ -497,33 +539,317 @@ shape = SubResource( 4 )
 position = Vector2( 2343.68, 406.786 )
 shape = SubResource( 5 )
 
-[node name="1Circle-table" type="Sprite" parent="."]
+[node name="KitchenArea" type="Node2D" parent="."]
+
+[node name="1Circle-table" type="Sprite" parent="KitchenArea"]
 position = Vector2( 477, 554 )
 scale = Vector2( 0.27832, 0.213867 )
-texture = ExtResource( 11 )
+texture = ExtResource( 15 )
 offset = Vector2( -801.235, -84.1643 )
 
-[node name="1Circle-table2" type="Sprite" parent="."]
+[node name="1Circle-table2" type="Sprite" parent="KitchenArea"]
 position = Vector2( 592, 377 )
 scale = Vector2( 0.27832, 0.213867 )
-texture = ExtResource( 11 )
+texture = ExtResource( 15 )
 
-[node name="1Circle-table3" type="Sprite" parent="."]
+[node name="1Circle-table3" type="Sprite" parent="KitchenArea"]
 position = Vector2( 292, 373 )
 scale = Vector2( 0.27832, 0.213867 )
-texture = ExtResource( 11 )
+texture = ExtResource( 15 )
 
-[node name="1Circle-table4" type="Sprite" parent="."]
+[node name="1Circle-table4" type="Sprite" parent="KitchenArea"]
 position = Vector2( 773, 392 )
 scale = Vector2( 0.27832, 0.213867 )
-texture = ExtResource( 11 )
+texture = ExtResource( 15 )
 
-[node name="1Circle-table5" type="Sprite" parent="."]
+[node name="1Circle-table5" type="Sprite" parent="KitchenArea"]
 position = Vector2( 523, 539 )
 scale = Vector2( 0.27832, 0.213867 )
-texture = ExtResource( 11 )
+texture = ExtResource( 15 )
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="KitchenFloor" type="Node2D" parent="KitchenArea"]
+position = Vector2( 2036, 299 )
+scale = Vector2( 3.28127, -4.11496 )
+
+[node name="KitchenTiles" type="Sprite" parent="KitchenArea/KitchenFloor"]
+position = Vector2( -166.094, -26.4887 )
+scale = Vector2( 0.667901, 0.330397 )
+texture = ExtResource( 12 )
+region_enabled = true
+region_rect = Rect2( 4, 128, 64, 64 )
+
+[node name="KitchenTiles2" type="Sprite" parent="KitchenArea/KitchenFloor"]
+position = Vector2( -166.094, -47.3881 )
+scale = Vector2( 0.667901, 0.330397 )
+texture = ExtResource( 12 )
+region_enabled = true
+region_rect = Rect2( 4, 128, 64, 64 )
+
+[node name="KitchenTiles3" type="Sprite" parent="KitchenArea/KitchenFloor"]
+position = Vector2( -207.847, -47.6311 )
+scale = Vector2( 0.667901, 0.330397 )
+texture = ExtResource( 12 )
+region_enabled = true
+region_rect = Rect2( 4, 128, 64, 64 )
+
+[node name="KitchenTiles4" type="Sprite" parent="KitchenArea/KitchenFloor"]
+position = Vector2( -251.123, -65.1282 )
+scale = Vector2( 0.667901, 0.279111 )
+texture = ExtResource( 12 )
+region_enabled = true
+region_rect = Rect2( 4, 128, 64, 64 )
+
+[node name="KitchenTiles6" type="Sprite" parent="KitchenArea/KitchenFloor"]
+position = Vector2( -39.3141, -64.3992 )
+scale = Vector2( 0.667901, 0.279111 )
+texture = ExtResource( 12 )
+region_enabled = true
+region_rect = Rect2( 4, 128, 64, 64 )
+
+[node name="KitchenTiles11" type="Sprite" parent="KitchenArea/KitchenFloor"]
+position = Vector2( 40.5148, -64.1562 )
+scale = Vector2( 0.657758, 0.279111 )
+texture = ExtResource( 12 )
+region_enabled = true
+region_rect = Rect2( 4, 128, 64, 64 )
+
+[node name="KitchenTiles12" type="Sprite" parent="KitchenArea/KitchenFloor"]
+position = Vector2( 2.7428, -64.3992 )
+scale = Vector2( 0.667901, 0.279111 )
+texture = ExtResource( 12 )
+region_enabled = true
+region_rect = Rect2( 4, 128, 64, 64 )
+
+[node name="KitchenTiles7" type="Sprite" parent="KitchenArea/KitchenFloor"]
+position = Vector2( -81.6758, -64.3992 )
+scale = Vector2( 0.667901, 0.279111 )
+texture = ExtResource( 12 )
+region_enabled = true
+region_rect = Rect2( 4, 128, 64, 64 )
+
+[node name="KitchenTiles8" type="Sprite" parent="KitchenArea/KitchenFloor"]
+position = Vector2( -124.342, -64.8852 )
+scale = Vector2( 0.667901, 0.279111 )
+texture = ExtResource( 12 )
+region_enabled = true
+region_rect = Rect2( 4, 128, 64, 64 )
+
+[node name="KitchenTiles9" type="Sprite" parent="KitchenArea/KitchenFloor"]
+position = Vector2( -166.094, -64.8852 )
+scale = Vector2( 0.667901, 0.279111 )
+texture = ExtResource( 12 )
+region_enabled = true
+region_rect = Rect2( 4, 128, 64, 64 )
+
+[node name="KitchenTiles10" type="Sprite" parent="KitchenArea/KitchenFloor"]
+position = Vector2( -208.761, -65.1282 )
+scale = Vector2( 0.667901, 0.279111 )
+texture = ExtResource( 12 )
+region_enabled = true
+region_rect = Rect2( 4, 128, 64, 64 )
+
+[node name="KitchenTiles5" type="Sprite" parent="KitchenArea/KitchenFloor"]
+position = Vector2( -124.037, -46.902 )
+scale = Vector2( 0.667901, 0.330397 )
+texture = ExtResource( 12 )
+region_enabled = true
+region_rect = Rect2( 4, 128, 64, 64 )
+
+[node name="KitchenTiles13" type="Sprite" parent="KitchenArea/KitchenFloor"]
+position = Vector2( -39.6189, -46.416 )
+scale = Vector2( 0.667901, 0.330397 )
+texture = ExtResource( 12 )
+region_enabled = true
+region_rect = Rect2( 4, 128, 64, 64 )
+
+[node name="KitchenTiles21" type="Sprite" parent="KitchenArea/KitchenFloor"]
+position = Vector2( -39.6189, -46.416 )
+scale = Vector2( 0.667901, 0.330397 )
+texture = ExtResource( 12 )
+region_enabled = true
+region_rect = Rect2( 4, 128, 64, 64 )
+
+[node name="KitchenTiles22" type="Sprite" parent="KitchenArea/KitchenFloor"]
+position = Vector2( 43.1053, -47.1451 )
+scale = Vector2( 0.605379, 0.330397 )
+texture = ExtResource( 12 )
+region_enabled = true
+region_rect = Rect2( 4, 128, 64, 64 )
+
+[node name="KitchenTiles25" type="Sprite" parent="KitchenArea/KitchenFloor"]
+position = Vector2( 42.4287, -26.2457 )
+scale = Vector2( 0.616972, 0.330397 )
+texture = ExtResource( 12 )
+region_enabled = true
+region_rect = Rect2( 4, 128, 64, 64 )
+
+[node name="KitchenTiles23" type="Sprite" parent="KitchenArea/KitchenFloor"]
+position = Vector2( 2.43805, -46.416 )
+scale = Vector2( 0.667901, 0.330397 )
+texture = ExtResource( 12 )
+region_enabled = true
+region_rect = Rect2( 4, 128, 64, 64 )
+
+[node name="KitchenTiles24" type="Sprite" parent="KitchenArea/KitchenFloor"]
+position = Vector2( 1.82855, -26.7317 )
+scale = Vector2( 0.667901, 0.330397 )
+texture = ExtResource( 12 )
+region_enabled = true
+region_rect = Rect2( 4, 128, 64, 64 )
+
+[node name="KitchenTiles16" type="Sprite" parent="KitchenArea/KitchenFloor"]
+position = Vector2( -81.371, -26.2457 )
+scale = Vector2( 0.667901, 0.330397 )
+texture = ExtResource( 12 )
+region_enabled = true
+region_rect = Rect2( 4, 128, 64, 64 )
+
+[node name="KitchenTiles18" type="Sprite" parent="KitchenArea/KitchenFloor"]
+position = Vector2( -81.6758, -46.416 )
+scale = Vector2( 0.667901, 0.330397 )
+texture = ExtResource( 12 )
+region_enabled = true
+region_rect = Rect2( 4, 128, 64, 64 )
+
+[node name="KitchenTiles19" type="Sprite" parent="KitchenArea/KitchenFloor"]
+position = Vector2( -39.6189, -26.4887 )
+scale = Vector2( 0.667901, 0.330397 )
+texture = ExtResource( 12 )
+region_enabled = true
+region_rect = Rect2( 4, 128, 64, 64 )
+
+[node name="KitchenTiles26" type="Sprite" parent="KitchenArea/KitchenFloor"]
+position = Vector2( -39.6189, -26.4887 )
+scale = Vector2( 0.667901, 0.330397 )
+texture = ExtResource( 12 )
+region_enabled = true
+region_rect = Rect2( 4, 128, 64, 64 )
+
+[node name="KitchenTiles20" type="Sprite" parent="KitchenArea/KitchenFloor"]
+position = Vector2( -124.037, -26.0027 )
+scale = Vector2( 0.667901, 0.330397 )
+texture = ExtResource( 12 )
+region_enabled = true
+region_rect = Rect2( 4, 128, 64, 64 )
+
+[node name="KitchenTiles17" type="Sprite" parent="KitchenArea/KitchenFloor"]
+position = Vector2( -250.818, -26.2457 )
+scale = Vector2( 0.667901, 0.330397 )
+texture = ExtResource( 12 )
+region_enabled = true
+region_rect = Rect2( 4, 128, 64, 64 )
+
+[node name="KitchenTiles14" type="Sprite" parent="KitchenArea/KitchenFloor"]
+position = Vector2( -250.513, -46.902 )
+scale = Vector2( 0.667901, 0.330397 )
+texture = ExtResource( 12 )
+region_enabled = true
+region_rect = Rect2( 4, 128, 64, 64 )
+
+[node name="KitchenTiles15" type="Sprite" parent="KitchenArea/KitchenFloor"]
+position = Vector2( -208.456, -26.7317 )
+scale = Vector2( 0.667901, 0.330397 )
+texture = ExtResource( 12 )
+region_enabled = true
+region_rect = Rect2( 4, 128, 64, 64 )
+
+[node name="Counter" type="Sprite" parent="KitchenArea"]
+position = Vector2( 1090, 379 )
+scale = Vector2( 0.207854, 0.260391 )
+texture = ExtResource( 4 )
+
+[node name="CashRegister" type="Sprite" parent="KitchenArea"]
+position = Vector2( 1089, 429 )
+scale = Vector2( 3.48644, -3.27907 )
+texture = ExtResource( 13 )
+flip_v = true
+
+[node name="Counter2Box" type="Sprite" parent="KitchenArea"]
+position = Vector2( 1095, 537 )
+scale = Vector2( 0.264244, 0.193889 )
+texture = ExtResource( 8 )
+offset = Vector2( 1.43799, -92.8367 )
+
+[node name="kitchenBox" type="Sprite" parent="KitchenArea"]
+position = Vector2( 1320, 347 )
+scale = Vector2( 0.197728, 0.193889 )
+texture = ExtResource( 8 )
+offset = Vector2( 1.43799, -92.8367 )
+
+[node name="kitchenBox2" type="Sprite" parent="KitchenArea"]
+position = Vector2( 1237, 348 )
+scale = Vector2( 0.197728, 0.193889 )
+texture = ExtResource( 8 )
+offset = Vector2( 1.43799, -92.8367 )
+
+[node name="kitchenBo3" type="Sprite" parent="KitchenArea"]
+position = Vector2( 1277, 292 )
+scale = Vector2( 0.197728, 0.193889 )
+texture = ExtResource( 8 )
+offset = Vector2( 1.43799, -92.8367 )
+
+[node name="kitchenBo4" type="Sprite" parent="KitchenArea"]
+material = SubResource( 9 )
+position = Vector2( 1488, 121 )
+scale = Vector2( 0.183147, 0.14141 )
+texture = ExtResource( 14 )
+offset = Vector2( 1.43799, -92.8367 )
+
+[node name="metalCrate" type="Sprite" parent="KitchenArea"]
+position = Vector2( 2180, 340 )
+scale = Vector2( 0.197728, 0.193889 )
+texture = ExtResource( 11 )
+offset = Vector2( 1.43799, -92.8367 )
+
+[node name="metalCrate2" type="Sprite" parent="KitchenArea"]
+position = Vector2( 2179, 347 )
+scale = Vector2( 0.197728, 0.193889 )
+texture = ExtResource( 11 )
+offset = Vector2( 1.43799, -92.8367 )
+
+[node name="metalCrate3" type="Sprite" parent="KitchenArea"]
+position = Vector2( 2178, 273 )
+scale = Vector2( 0.197728, 0.193889 )
+texture = ExtResource( 11 )
+offset = Vector2( 1.43799, -92.8367 )
+
+[node name="Sink" type="Sprite" parent="KitchenArea"]
+position = Vector2( 1494, 295 )
+scale = Vector2( 4.43139, -4.11496 )
+texture = ExtResource( 12 )
+flip_h = true
+flip_v = true
+region_enabled = true
+region_rect = Rect2( 3, 4, 61, 33 )
+
+[node name="kitchenDesk" type="Sprite" parent="KitchenArea"]
+position = Vector2( 2036, 299 )
+scale = Vector2( 3.28127, -4.11496 )
+texture = ExtResource( 12 )
+flip_h = true
+flip_v = true
+region_enabled = true
+region_rect = Rect2( 73, 4, 61, 33 )
+
+[node name="Stove" type="Sprite" parent="KitchenArea"]
+position = Vector2( 1856, 296 )
+scale = Vector2( 4.43139, -4.11496 )
+texture = ExtResource( 12 )
+flip_h = true
+flip_v = true
+region_enabled = true
+region_rect = Rect2( 3, 82, 39, 33 )
+
+[node name="refrig" type="Sprite" parent="KitchenArea"]
+position = Vector2( 1101, 306 )
+scale = Vector2( 4.63327, -3.86629 )
+texture = ExtResource( 12 )
+offset = Vector2( 129.067, 14.4842 )
+flip_v = true
+region_enabled = true
+region_rect = Rect2( 151, 68, 33, 60 )
+
+[node name="Kitchen" type="Sprite" parent="."]
 position = Vector2( -645, 43 )
 scale = Vector2( 1.9, 1.265 )
 texture = SubResource( 6 )
