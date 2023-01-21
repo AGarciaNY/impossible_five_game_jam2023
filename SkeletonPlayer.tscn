@@ -403,24 +403,24 @@ position = Vector2( 236.608, 727.99 )
 rest = Transform2D( 1, 0, 0, 1, 236.608, 727.99 )
 
 [node name="chest" type="Bone2D" parent="Skeleton2D/hip"]
-position = Vector2( -0.389323, -50.6615 )
+position = Vector2( -0.177433, -35.1933 )
 rest = Transform2D( 1, 0, 0, 1, -2.29633, -189.875 )
 
 [node name="Head" type="Bone2D" parent="Skeleton2D/hip/chest"]
-position = Vector2( -5.30493, -166.419 )
+position = Vector2( 5.28967, -47.7591 )
 rotation = -1.5708
 rest = Transform2D( -4.37114e-08, -1, 1, -4.37114e-08, -5.30493, -166.419 )
 default_length = 168.0
 
 [node name="Arm_Left" type="Bone2D" parent="Skeleton2D/hip/chest"]
 position = Vector2( -88.4966, -34.4869 )
-rotation = -4.29875
+rotation = -3.55049
 rest = Transform2D( -0.401948, 0.915663, -0.915663, -0.401948, -88.4966, -34.4869 )
 default_length = 179.0
 
 [node name="Arm_Right" type="Bone2D" parent="Skeleton2D/hip/chest"]
-position = Vector2( 118.13, -16.848 )
-rotation = -4.82741
+position = Vector2( 130.844, -35.9184 )
+rotation = -5.85336
 rest = Transform2D( 0.114762, 0.993393, -0.993393, 0.114762, 118.13, -16.848 )
 default_length = 179.0
 
@@ -444,3 +444,7 @@ anims/Walk = SubResource( 2 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 226.292, 708.135 )
 shape = SubResource( 3 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 226.292, 708.135 )
+scale = Vector2( 1, 1 )

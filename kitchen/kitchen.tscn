@@ -81,11 +81,10 @@ extents = Vector2( 1325.03, 104.262 )
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 78.6038, 537.698 )
 
-[sub_resource type="StreamTexture" id=7]
+[sub_resource type="StreamTexture" id=6]
 flags = 4
-load_path = "res://.import/1kitchen.png-9af0c8563d760aadf9a7183a1d9cb13c.stex"
 
-[sub_resource type="AnimatedTexture" id=6]
+[sub_resource type="AnimatedTexture" id=7]
 
 [node name="Node" type="Node"]
 __meta__ = {
@@ -526,6 +525,6 @@ texture = ExtResource( 11 )
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( -645, 43 )
 scale = Vector2( 1.9, 1.265 )
-texture = SubResource( 7 )
-normal_map = SubResource( 6 )
+texture = SubResource( 6 )
+normal_map = SubResource( 7 )
 region_rect = Rect2( 46, 27, 11, 3 )
