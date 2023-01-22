@@ -1,7 +1,4 @@
-extends KinematicBody2D
-
-var velocity = Vector2(0,0)
-var speed = 100
+extends Control
 
 var foodData = [
 	{	
@@ -35,7 +32,7 @@ var foodData = [
 		"ing": [
 			"cake",
 		],
-		"recipe": ["check the fridge"]
+		"recipe": []
 	},
 	{
 		"name": "scream to bread",
@@ -66,7 +63,10 @@ var foodData = [
 		],
 	}
 ]
-export var customerOrder = "food" 
+export var nameOfFood = ""
+export var priceOfFood = ""
+export var recipeOfFood = ""
+export var itemsOfFood = ""
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -75,22 +75,24 @@ export var customerOrder = "food"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	customerOrder = get_randem_food();
-	#print(customerOrder)
-	pass
+		#foodData.push([key,get_node("/root/FoodData")[key]])
+	randomize()
+	print(get_randem_food(foodData))
+	pass # Replace with function body.
 
-func _process(delta):
-	move_coustomer()
-	pass
+func get_randem_food(obj):
+	return foodData[randi() % (foodData.size() - 1)]
+	
 
-func move_coustomer():
-	velocity.x = speed
-	velocity.y -= 0
-	velocity = move_and_slide(velocity, Vector2.UP)
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
 
-func get_randem_food():
-	return foodData[randi() % (foodData.size() - 1)]
 
+func _on_Node_OrderInProgress():
+	$foodName.text = "food: " + nameOfFood
+	$price.text = "price: " + str(priceOfFood)
+	$recipe.text = "recipe: " + recipeOfFood
+	$items.text = itemsOfFood
+	pass # Replace with function body.
