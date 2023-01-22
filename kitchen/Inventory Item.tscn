@@ -44,9 +44,6 @@ anchor_bottom = 1.0
 rect_pivot_offset = Vector2( -67.5526, 36.3993 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_right = 40.0

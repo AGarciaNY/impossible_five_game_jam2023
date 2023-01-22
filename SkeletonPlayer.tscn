@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://jam assets/art/robysplit.png" type="Texture" id=1]
 [ext_resource path="res://SkeletonPlayer.gd" type="Script" id=2]
 [ext_resource path="res://jam assets/art/saw.png" type="Texture" id=3]
+[ext_resource path="res://Menu/Roboto-Bold.ttf" type="DynamicFontData" id=4]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Crouch"
@@ -329,6 +330,10 @@ tracks/9/keys = {
 radius = 206.842
 height = 106.316
 
+[sub_resource type="DynamicFont" id=5]
+size = 24
+font_data = ExtResource( 4 )
+
 [node name="SkeletonPlayer" type="KinematicBody2D"]
 scale = Vector2( 0.1, 0.1 )
 z_index = 2
@@ -476,11 +481,13 @@ position = Vector2( 226.292, 708.135 )
 z_index = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Camera2D"]
+modulate = Color( 0.0470588, 0.894118, 0.117647, 1 )
 margin_left = -4826.0
 margin_top = -2778.0
 margin_right = -4725.0
 margin_bottom = -2735.0
-rect_scale = Vector2( 20, 20 )
+rect_scale = Vector2( 30, 30 )
+custom_fonts/normal_font = SubResource( 5 )
 text = "Hi there
 "
 

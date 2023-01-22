@@ -45,6 +45,7 @@ func _process(delta):
 				currentCustomer += 1
 				numberOfCustomer -= 1
 				emit_signal("OrderFinished")
+				$Goose.play()
 				print(score)
 			$GlassBottle.play()
 			emit_signal("OrderInProgress")
