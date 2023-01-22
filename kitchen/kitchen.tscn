@@ -92,18 +92,18 @@ extents = Vector2( 1325.03, 99.3795 )
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 78.6038, 537.698 )
 
-[sub_resource type="RectangleShape2D" id=12]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 56.5, 147.5 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 15.3478, 10.1796 )
 
-[sub_resource type="StreamTexture" id=7]
+[sub_resource type="StreamTexture" id=8]
 flags = 4
 
-[sub_resource type="AnimatedTexture" id=8]
+[sub_resource type="AnimatedTexture" id=9]
 
-[sub_resource type="Shader" id=9]
+[sub_resource type="Shader" id=10]
 code = "shader_type canvas_item;
 
 uniform float outline_width = 2.0;
@@ -138,12 +138,12 @@ void fragment() {
 
 "
 
-[sub_resource type="ShaderMaterial" id=10]
-shader = SubResource( 9 )
+[sub_resource type="ShaderMaterial" id=11]
+shader = SubResource( 10 )
 shader_param/outline_width = 4.0
 shader_param/outline_color = Color( 0.462745, 0.0705882, 0.937255, 1 )
 
-[sub_resource type="RectangleShape2D" id=11]
+[sub_resource type="RectangleShape2D" id=12]
 extents = Vector2( 32.5, 57.5 )
 
 [node name="Node2" type="Node"]
@@ -570,7 +570,7 @@ shape = SubResource( 5 )
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Wall Colliders"]
 position = Vector2( 1122.5, 399.5 )
-shape = SubResource( 12 )
+shape = SubResource( 6 )
 
 [node name="KitchenArea" type="Node2D" parent="."]
 
@@ -882,24 +882,24 @@ region_rect = Rect2( 151, 68, 33, 60 )
 position = Vector2( 128.924, -15.8815 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KitchenArea/refrig/Area2D"]
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="Kitchen" type="Sprite" parent="."]
 position = Vector2( -645, 43 )
 scale = Vector2( 1.9, 1.265 )
-texture = SubResource( 7 )
-normal_map = SubResource( 8 )
+texture = SubResource( 8 )
+normal_map = SubResource( 9 )
 region_rect = Rect2( 46, 27, 11, 3 )
 
 [node name="Lolipop" type="Sprite" parent="."]
-material = SubResource( 10 )
+material = SubResource( 11 )
 position = Vector2( 1485, 117 )
 scale = Vector2( 0.174894, 0.127591 )
 texture = ExtResource( 14 )
 offset = Vector2( 1.43799, -92.8367 )
 
 [node name="Lolipop2" type="Sprite" parent="."]
-material = SubResource( 10 )
+material = SubResource( 11 )
 position = Vector2( 1913, 115 )
 scale = Vector2( 0.174894, 0.127591 )
 texture = ExtResource( 14 )
@@ -907,6 +907,27 @@ offset = Vector2( 1.43799, -92.8367 )
 
 [node name="SkeletonPlayer" parent="." instance=ExtResource( 10 )]
 position = Vector2( 140.927, 353.672 )
+
+[node name="Left_Arm" parent="SkeletonPlayer/YSort" index="0"]
+bones = [ NodePath("hip"), PoolRealArray( 0, 0, 0, 0, 0 ), NodePath("hip/chest"), PoolRealArray( 0, 0, 0, 0, 0 ), NodePath("hip/chest/Head"), PoolRealArray( 0, 0, 0, 0, 0 ), NodePath("hip/chest/Arm_Left"), PoolRealArray( 0.5, 0.5, 0.5, 0.5, 0.5 ), NodePath("hip/chest/Arm_Right"), PoolRealArray( 0, 0, 0, 0, 0 ), NodePath("hip/Leg_Right"), PoolRealArray( 0, 0, 0, 0, 0 ), NodePath("hip/Leg_Left"), PoolRealArray( 0, 0, 0, 0, 0 ) ]
+
+[node name="Right_Arm" parent="SkeletonPlayer/YSort" index="1"]
+bones = [ NodePath("hip"), PoolRealArray( 0, 0, 0, 0, 0 ), NodePath("hip/chest"), PoolRealArray( 0, 0, 0, 0, 0 ), NodePath("hip/chest/Head"), PoolRealArray( 0, 0, 0, 0, 0 ), NodePath("hip/chest/Arm_Left"), PoolRealArray( 0, 0, 0, 0, 0 ), NodePath("hip/chest/Arm_Right"), PoolRealArray( 0.5, 0.5, 0.5, 0.5, 0.5 ), NodePath("hip/Leg_Right"), PoolRealArray( 0, 0, 0, 0, 0 ), NodePath("hip/Leg_Left"), PoolRealArray( 0, 0, 0, 0, 0 ) ]
+
+[node name="Body" parent="SkeletonPlayer/YSort" index="2"]
+bones = [ NodePath("hip"), PoolRealArray( 0, 0, 0, 0 ), NodePath("hip/chest"), PoolRealArray( 1, 1, 1, 1 ), NodePath("hip/chest/Head"), PoolRealArray( 0, 0, 0, 0 ), NodePath("hip/chest/Arm_Left"), PoolRealArray( 0, 0, 0, 0 ), NodePath("hip/chest/Arm_Right"), PoolRealArray( 0, 0, 0, 0 ), NodePath("hip/Leg_Right"), PoolRealArray( 0, 0, 0, 0 ), NodePath("hip/Leg_Left"), PoolRealArray( 0, 0, 0, 0 ) ]
+
+[node name="Right_Leg" parent="SkeletonPlayer/YSort" index="3"]
+bones = [ NodePath("hip"), PoolRealArray( 0, 0, 0, 0 ), NodePath("hip/chest"), PoolRealArray( 0, 0, 0, 0 ), NodePath("hip/chest/Head"), PoolRealArray( 0, 0, 0, 0 ), NodePath("hip/chest/Arm_Left"), PoolRealArray( 0, 0, 0, 0 ), NodePath("hip/chest/Arm_Right"), PoolRealArray( 0, 0, 0, 0 ), NodePath("hip/Leg_Right"), PoolRealArray( 0.5, 0.5, 0.5, 0.5 ), NodePath("hip/Leg_Left"), PoolRealArray( 0, 0, 0, 0 ) ]
+
+[node name="Left_Leg" parent="SkeletonPlayer/YSort" index="4"]
+bones = [ NodePath("hip"), PoolRealArray( 0, 0, 0, 0, 0 ), NodePath("hip/chest"), PoolRealArray( 0, 0, 0, 0, 0 ), NodePath("hip/chest/Head"), PoolRealArray( 0, 0, 0, 0, 0 ), NodePath("hip/chest/Arm_Left"), PoolRealArray( 0, 0, 0, 0, 0 ), NodePath("hip/chest/Arm_Right"), PoolRealArray( 0, 0, 0, 0, 0 ), NodePath("hip/Leg_Right"), PoolRealArray( 0, 0, 0, 0, 0 ), NodePath("hip/Leg_Left"), PoolRealArray( 0.5, 0.5, 0.5, 0.5, 0.5 ) ]
+
+[node name="Head" parent="SkeletonPlayer/YSort" index="5"]
+bones = [ NodePath("hip"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/chest"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/chest/Head"), PoolRealArray( 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1, 1 ), NodePath("hip/chest/Arm_Left"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/chest/Arm_Right"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/Leg_Right"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/Leg_Left"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ) ]
+
+[node name="Face" parent="SkeletonPlayer/YSort/Head" index="0"]
+bones = [ NodePath("hip"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/chest"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/chest/Head"), PoolRealArray( 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5 ), NodePath("hip/chest/Arm_Left"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/chest/Arm_Right"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/Leg_Right"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/Leg_Left"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ) ]
 
 [node name="Camera2D" parent="SkeletonPlayer" index="4"]
 position = Vector2( 226.292, -549.022 )
@@ -934,7 +955,7 @@ collision_layer = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="playerReadyToTakeOrder"]
 position = Vector2( 1179.5, 489.5 )
-shape = SubResource( 11 )
+shape = SubResource( 12 )
 
 [node name="DiceRoll" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 21 )
