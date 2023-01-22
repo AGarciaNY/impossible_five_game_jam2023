@@ -7,6 +7,9 @@ var velocity = Vector2.ZERO
 var isSprinting = false
 var isCrouching = false
 var money = 0
+
+var score = 0
+
 onready var animationPlayer = $AnimationPlayer
 
 enum {
@@ -15,7 +18,8 @@ enum {
 	WALK
 }
 var state = STAY
-
+func _ready():
+	$Camera2D/RichTextLabel.text = str(score)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	var input_vector = Vector2.ZERO
@@ -62,3 +66,9 @@ func _physics_process(delta):
 				velocity = velocity.move_toward(input_vector * MAX_SPEED, ACCELERATION * delta)
 				
 	velocity = move_and_slide(velocity)
+
+
+func _on_Node2_orderFinishedGetPoints():
+	score += 5
+	$Camera2D/RichTextLabel.text = str(score)
+	pass # Replace with function body.

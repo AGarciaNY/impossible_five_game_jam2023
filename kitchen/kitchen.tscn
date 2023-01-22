@@ -939,6 +939,7 @@ shape = SubResource( 11 )
 [node name="DiceRoll" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 21 )
 
+[connection signal="orderFinishedGetPoints" from="." to="SkeletonPlayer" method="_on_Node2_orderFinishedGetPoints"]
 [connection signal="area_entered" from="KitchenArea/refrig/Area2D" to="CookManager" method="_on_Area2D_area_entered"]
 [connection signal="area_exited" from="KitchenArea/refrig/Area2D" to="CookManager" method="_on_Area2D_area_exited"]
 [connection signal="area_exited" from="playerReadyToTakeOrder" to="." method="_on_playerReadyToTakeOrder_area_exited"]

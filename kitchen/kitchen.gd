@@ -3,6 +3,8 @@ extends Node
 signal plyerTakingOrder
 signal plyerNotTakingOrder
 
+signal orderFinishedGetPoints
+
 var takingCustomerOrder = false
 # Declare member variables here. Examples:
 # var a = 2
@@ -32,3 +34,7 @@ func _on_playerReadyToTakeOrder_area_exited(area):
 func _on_Node_OrderInProgress():
 	takingCustomerOrder = true
 	pass # Replace with function body.
+	
+
+func _on_Node_OrderFinished():
+	emit_signal("orderFinishedGetPoints")

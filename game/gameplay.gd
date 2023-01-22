@@ -1,12 +1,14 @@
 extends Node
 
 signal OrderInProgress
-
+signal OrderFinished
 var numberOfCustomer = 0
 var currentCustomer = 0
 var playerIsTakingOrder = false
 var customerIsReadyToOrder = false
 var arrayOfMusic
+var score = 0
+
 
 export(PackedScene) var customer_node
 # Declare member variables here. Examples:
@@ -37,11 +39,13 @@ func _process(delta):
 			$customerMenu.visible = true
 			var hasFood = get_node("customerMenu").hasCorrectFood
 			if hasFood:
+				score += 5
 				get_node("customerMenu").give_order()
 				remove_child(allTheCustomers[currentCustomer])
 				currentCustomer += 1
 				numberOfCustomer -= 1
-				
+				emit_signal("OrderFinished")
+				print(score)
 			$GlassBottle.play()
 			emit_signal("OrderInProgress")
 		else:
@@ -89,3 +93,4 @@ func _on_customerGetingFood_area_exited(area):
 	customerIsReadyToOrder = false
 	$customerMenu.visible = false
 	pass # Replace with function body.
+

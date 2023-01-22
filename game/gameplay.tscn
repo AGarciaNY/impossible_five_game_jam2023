@@ -98,6 +98,7 @@ stream = ExtResource( 13 )
 [node name="Piano" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 14 )
 
+[connection signal="OrderFinished" from="." to="Node" method="_on_Node_OrderFinished"]
 [connection signal="OrderInProgress" from="." to="Node" method="_on_Node_OrderInProgress"]
 [connection signal="OrderInProgress" from="." to="customerMenu" method="_on_Node_OrderInProgress"]
 [connection signal="plyerNotTakingOrder" from="Node" to="." method="_on_Node_plyerNotTakingOrder"]
