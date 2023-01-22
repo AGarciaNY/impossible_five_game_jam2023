@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://kitchen/kitchen.tscn" type="PackedScene" id=1]
 [ext_resource path="res://game/gameplay.gd" type="Script" id=2]
@@ -8,6 +8,9 @@
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 11, 367, 0, 0, 0, 0, 4, 594, 0, 0, 0, 0, 1268, 594, 0, 0, 0, 0, 1260, 367, 0, 0, 0, 0, 11, 367 )
 }
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 43.125, 48.5 )
 
 [node name="Node" type="Node"]
 script = ExtResource( 2 )
@@ -25,4 +28,15 @@ curve = SubResource( 1 )
 position = Vector2( 11, 367 )
 rotation = 1.60162
 
+[node name="customerGetingFood" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="customerGetingFood"]
+light_mask = 0
+position = Vector2( 1088.88, 433 )
+shape = SubResource( 2 )
+
+[connection signal="plyerTakingOrder" from="Node" to="." method="_on_Node_plyerTakingOrder"]
 [connection signal="timeout" from="customerTimer" to="." method="_on_customerTimer_timeout"]
+[connection signal="body_entered" from="customerGetingFood" to="." method="_on_customerGetingFood_body_entered"]

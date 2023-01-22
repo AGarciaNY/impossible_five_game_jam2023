@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://jam assets/art/bricks.png" type="Texture" id=1]
 [ext_resource path="res://jam assets/art/coldstone.png" type="Texture" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://jam assets/art/1circle-table.png" type="Texture" id=15]
 [ext_resource path="res://kitchen/PantrySelection.tscn" type="PackedScene" id=16]
 [ext_resource path="res://kitchen/CookManager.gd" type="Script" id=17]
+[ext_resource path="res://kitchen/kitchen.gd" type="Script" id=18]
 
 [sub_resource type="TileSet" id=1]
 0/name = "bricks.png 0"
@@ -83,7 +84,7 @@ extents = Vector2( 1300, 200 )
 extents = Vector2( 79.8636, 345.46 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 1325.03, 104.262 )
+extents = Vector2( 1325.03, 99.3795 )
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 78.6038, 537.698 )
@@ -136,7 +137,11 @@ shader = SubResource( 9 )
 shader_param/outline_width = 4.0
 shader_param/outline_color = Color( 0.462745, 0.0705882, 0.937255, 1 )
 
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 32.5, 57.5 )
+
 [node name="Node2" type="Node"]
+script = ExtResource( 18 )
 __meta__ = {
 "_edit_vertical_guides_": [ 2221.0 ]
 }
@@ -539,7 +544,7 @@ position = Vector2( -42.6998, 651.13 )
 shape = SubResource( 3 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Wall Colliders"]
-position = Vector2( 1096.34, 702.497 )
+position = Vector2( 1096.34, 707.38 )
 shape = SubResource( 4 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Wall Colliders"]
@@ -872,6 +877,27 @@ offset = Vector2( 1.43799, -92.8367 )
 [node name="SkeletonPlayer" parent="." instance=ExtResource( 10 )]
 position = Vector2( 140.927, 353.672 )
 
+[node name="Left_Arm" parent="SkeletonPlayer/YSort" index="0"]
+bones = [ "hip", PoolRealArray( 0, 0, 0, 0, 0 ), "hip/chest", PoolRealArray( 0, 0, 0, 0, 0 ), "hip/chest/Head", PoolRealArray( 0, 0, 0, 0, 0 ), "hip/chest/Arm_Left", PoolRealArray( 0.5, 0.5, 0.5, 0.5, 0.5 ), "hip/chest/Arm_Right", PoolRealArray( 0, 0, 0, 0, 0 ), "hip/Leg_Right", PoolRealArray( 0, 0, 0, 0, 0 ), "hip/Leg_Left", PoolRealArray( 0, 0, 0, 0, 0 ) ]
+
+[node name="Right_Arm" parent="SkeletonPlayer/YSort" index="1"]
+bones = [ "hip", PoolRealArray( 0, 0, 0, 0, 0 ), "hip/chest", PoolRealArray( 0, 0, 0, 0, 0 ), "hip/chest/Head", PoolRealArray( 0, 0, 0, 0, 0 ), "hip/chest/Arm_Left", PoolRealArray( 0, 0, 0, 0, 0 ), "hip/chest/Arm_Right", PoolRealArray( 0.5, 0.5, 0.5, 0.5, 0.5 ), "hip/Leg_Right", PoolRealArray( 0, 0, 0, 0, 0 ), "hip/Leg_Left", PoolRealArray( 0, 0, 0, 0, 0 ) ]
+
+[node name="Body" parent="SkeletonPlayer/YSort" index="2"]
+bones = [ "hip", PoolRealArray( 0, 0, 0, 0 ), "hip/chest", PoolRealArray( 1, 1, 1, 1 ), "hip/chest/Head", PoolRealArray( 0, 0, 0, 0 ), "hip/chest/Arm_Left", PoolRealArray( 0, 0, 0, 0 ), "hip/chest/Arm_Right", PoolRealArray( 0, 0, 0, 0 ), "hip/Leg_Right", PoolRealArray( 0, 0, 0, 0 ), "hip/Leg_Left", PoolRealArray( 0, 0, 0, 0 ) ]
+
+[node name="Right_Leg" parent="SkeletonPlayer/YSort" index="3"]
+bones = [ "hip", PoolRealArray( 0, 0, 0, 0 ), "hip/chest", PoolRealArray( 0, 0, 0, 0 ), "hip/chest/Head", PoolRealArray( 0, 0, 0, 0 ), "hip/chest/Arm_Left", PoolRealArray( 0, 0, 0, 0 ), "hip/chest/Arm_Right", PoolRealArray( 0, 0, 0, 0 ), "hip/Leg_Right", PoolRealArray( 0.5, 0.5, 0.5, 0.5 ), "hip/Leg_Left", PoolRealArray( 0, 0, 0, 0 ) ]
+
+[node name="Left_Leg" parent="SkeletonPlayer/YSort" index="4"]
+bones = [ "hip", PoolRealArray( 0, 0, 0, 0, 0 ), "hip/chest", PoolRealArray( 0, 0, 0, 0, 0 ), "hip/chest/Head", PoolRealArray( 0, 0, 0, 0, 0 ), "hip/chest/Arm_Left", PoolRealArray( 0, 0, 0, 0, 0 ), "hip/chest/Arm_Right", PoolRealArray( 0, 0, 0, 0, 0 ), "hip/Leg_Right", PoolRealArray( 0, 0, 0, 0, 0 ), "hip/Leg_Left", PoolRealArray( 0.5, 0.5, 0.5, 0.5, 0.5 ) ]
+
+[node name="Head" parent="SkeletonPlayer/YSort" index="5"]
+bones = [ "hip", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "hip/chest", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "hip/chest/Head", PoolRealArray( 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1, 1 ), "hip/chest/Arm_Left", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "hip/chest/Arm_Right", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "hip/Leg_Right", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "hip/Leg_Left", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ) ]
+
+[node name="Face" parent="SkeletonPlayer/YSort/Head" index="0"]
+bones = [ "hip", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ), "hip/chest", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ), "hip/chest/Head", PoolRealArray( 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5 ), "hip/chest/Arm_Left", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ), "hip/chest/Arm_Right", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ), "hip/Leg_Right", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ), "hip/Leg_Left", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ) ]
+
 [node name="Camera2D" parent="SkeletonPlayer" index="4"]
 position = Vector2( 226.292, -549.022 )
 current = true
@@ -890,7 +916,15 @@ margin_top = 92.6129
 margin_right = 258.401
 margin_bottom = 92.6129
 
+[node name="playerReadyToTakeOrder" type="Area2D" parent="."]
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="playerReadyToTakeOrder"]
+position = Vector2( 1179.5, 489.5 )
+shape = SubResource( 11 )
+
 [connection signal="area_entered" from="KitchenArea/refrig/Area2D" to="CookManager" method="_on_Area2D_area_entered"]
 [connection signal="area_exited" from="KitchenArea/refrig/Area2D" to="CookManager" method="_on_Area2D_area_exited"]
+[connection signal="body_entered" from="playerReadyToTakeOrder" to="." method="_on_playerReadyToTakeOrder_body_entered"]
 
 [editable path="SkeletonPlayer"]
