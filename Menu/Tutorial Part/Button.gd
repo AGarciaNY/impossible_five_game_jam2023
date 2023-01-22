@@ -8,6 +8,6 @@ extends Button
 
 # Called when the node enters the scene tree for the first time.
 
+
 func _on_Button_pressed():
-	
-	get_tree().change_scene("res://kitchen/kitchen.tscn");
+	get_tree().change_scene("res://Menu/Note/letter.tscn");

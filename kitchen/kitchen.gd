@@ -19,7 +19,6 @@ func _ready():
 
 
 func _on_playerReadyToTakeOrder_body_entered(body):
-	print("hi")
 	emit_signal("plyerTakingOrder")
 	pass # Replace with function body.
 

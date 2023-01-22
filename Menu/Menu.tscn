@@ -73,7 +73,7 @@ margin_right = 256.0
 margin_bottom = 170.0
 focus_neighbour_bottom = NodePath("../Start")
 custom_fonts/font = SubResource( 3 )
-text = "exit"
+text = "Quit"
 flat = true
 
 [node name="GameTitle" type="RichTextLabel" parent="."]
@@ -143,5 +143,4 @@ autoplay = true
 
 [connection signal="pressed" from="ColorRect/VBoxContainer/Start" to="." method="_on_Start_pressed"]
 [connection signal="pressed" from="ColorRect/VBoxContainer/Tutorial" to="." method="_on_Tutorial_pressed"]
-[connection signal="pressed" from="ColorRect/VBoxContainer/Tutorial" to="." method="_on_Options_pressed"]
 [connection signal="pressed" from="ColorRect/VBoxContainer/Quit" to="." method="_on_Quit_pressed"]

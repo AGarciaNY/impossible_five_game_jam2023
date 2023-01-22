@@ -1,0 +1,65 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Menu/pdark.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Menu/Note/card-with-red-envelope.jpg" type="Texture" id=2]
+[ext_resource path="res://Menu/Note/letterButton.gd" type="Script" id=3]
+[ext_resource path="res://Menu/Roboto-Bold.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 48
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 60
+font_data = ExtResource( 1 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 2.0
+margin_bottom = 2.0
+rect_pivot_offset = Vector2( 1894, 270 )
+
+[node name="Letter" type="Sprite" parent="."]
+position = Vector2( 527, 245 )
+scale = Vector2( 0.371805, 0.288068 )
+texture = ExtResource( 2 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Letter"]
+modulate = Color( 0.0313726, 0.0313726, 0.0313726, 1 )
+margin_left = -1102.73
+margin_top = -468.639
+margin_right = 1158.27
+margin_bottom = 903.361
+custom_fonts/normal_font = SubResource( 1 )
+text = "Welcome my son Robby,
+
+I am to relate this message about our how the family resturants has been in shambles leading us to hide. Oh the agony!
+
+I beseech for you to restore, to act and to clean up as I spread to name and pray thy Jesus Christ. Amen.
+
+The drama, weakness, and responsbility shall be left as you to outline as our chosen one.
+
+We are drawing a high sigificance of tax this month, leaving us to have nothing, and to be left poor income.
+
+Thus, to sum up the basis issues can be only resolved as you attempt to drain the dirty mud and become to remain as a driver of true leadership
+
+We know this challegene to consist of different hurdles of timing energy, thinking about efficiency, and we ask you to be pressured this 5 min concept we built.
+
+Thus Robby, we ask to surround yourself with many foods left in the refrigerator and not to make assumptions about our customers, provide them with a satisfactory meal, and you to get a earn high score.
+"
+
+[node name="letterButton" type="Button" parent="Letter"]
+modulate = Color( 0.905882, 0.490196, 0.188235, 1 )
+margin_left = 527.158
+margin_top = 735.937
+margin_right = 1078.16
+margin_bottom = 870.937
+custom_fonts/font = SubResource( 2 )
+text = "PrESS TO rEADY"
+flat = true
+script = ExtResource( 3 )
+
+[connection signal="pressed" from="Letter/letterButton" to="Letter/letterButton" method="_on_letterButton_pressed"]
