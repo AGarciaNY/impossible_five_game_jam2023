@@ -24,7 +24,7 @@ func _process(delta):
 		var time_passed = "%02d : %02d" % [mins,secs]
 		text = time_passed
 		
-		if(time_passed == "05 : 00"):
+		if(time_passed == "00 : 01"):
 			get_tree().change_scene("res://Menu/Ending/end.tscn");
 		pass
 
