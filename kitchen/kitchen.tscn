@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://jam assets/art/bricks.png" type="Texture" id=1]
 [ext_resource path="res://jam assets/art/coldstone.png" type="Texture" id=2]
@@ -19,6 +19,8 @@
 [ext_resource path="res://kitchen/CookManager.gd" type="Script" id=17]
 [ext_resource path="res://kitchen/kitchen.gd" type="Script" id=18]
 [ext_resource path="res://jam assets/art/icystone.png" type="Texture" id=19]
+[ext_resource path="res://jam assets/sounds/Impact.wav" type="AudioStream" id=20]
+[ext_resource path="res://jam assets/sounds/DiceRoll.wav" type="AudioStream" id=21]
 
 [sub_resource type="TileSet" id=1]
 0/name = "bricks.png 0"
@@ -906,12 +908,6 @@ offset = Vector2( 1.43799, -92.8367 )
 [node name="SkeletonPlayer" parent="." instance=ExtResource( 10 )]
 position = Vector2( 140.927, 353.672 )
 
-[node name="Head" parent="SkeletonPlayer/YSort" index="5"]
-polygon = PoolVector2Array( 43.5644, 50.495, 10.8911, 156.436, 10.8911, 247.525, 58.4158, 325.743, 131.683, 373.267, 252.475, 392.079, 370.297, 364.356, 455.446, 284.158, 484.158, 198.02, 456.436, 28.7129, 424.752, 3.9604, 262.376, 3.9604, 100.99, 15.8416 )
-
-[node name="Face" parent="SkeletonPlayer/YSort/Head" index="1"]
-polygon = PoolVector2Array( 73.1343, 426.866, 34.3284, 498.507, 126.866, 600, 207.463, 688.06, 274.627, 688.06, 353.731, 616.418, 447.761, 492.537, 431.343, 414.925 )
-
 [node name="Camera2D" parent="SkeletonPlayer" index="4"]
 position = Vector2( 226.292, -549.022 )
 current = true
@@ -920,6 +916,9 @@ current = true
 position = Vector2( 140.927, 353.672 )
 scale = Vector2( 0.1, 0.1 )
 script = ExtResource( 17 )
+
+[node name="Impact" type="AudioStreamPlayer" parent="CookManager"]
+stream = ExtResource( 20 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -936,6 +935,9 @@ collision_layer = 8
 [node name="CollisionShape2D" type="CollisionShape2D" parent="playerReadyToTakeOrder"]
 position = Vector2( 1179.5, 489.5 )
 shape = SubResource( 11 )
+
+[node name="DiceRoll" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 21 )
 
 [connection signal="area_entered" from="KitchenArea/refrig/Area2D" to="CookManager" method="_on_Area2D_area_entered"]
 [connection signal="area_exited" from="KitchenArea/refrig/Area2D" to="CookManager" method="_on_Area2D_area_exited"]

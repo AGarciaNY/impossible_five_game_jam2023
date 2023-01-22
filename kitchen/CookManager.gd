@@ -5,6 +5,7 @@ onready var stove = get_node("../CanvasLayer/Cook Interface")
 #Shows Pantry
 func _on_Area2D_area_entered(_area):
 	pantry.visible = true
+	$Impact.play()
 
 #hide Pantry
 func _on_Area2D_area_exited(_area):
@@ -12,5 +13,6 @@ func _on_Area2D_area_exited(_area):
 
 func _on_CookArea_area_entered(_area):
 	stove.populateInventory()
+	
 	stove.visible = true
 	pass # Replace with function body.

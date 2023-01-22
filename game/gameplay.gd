@@ -6,6 +6,7 @@ var numberOfCustomer = 0
 var currentCustomer = 0
 var playerIsTakingOrder = false
 var customerIsReadyToOrder = false
+var arrayOfMusic
 
 export(PackedScene) var customer_node
 # Declare member variables here. Examples:
@@ -17,6 +18,7 @@ var allTheCustomers = []
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
+	arrayOfMusic = $NewCustomerSound.get_children()
 	$customerTimer.start()
 	pass # Replace with function body.
 
@@ -46,8 +48,10 @@ func _process(delta):
 			$customerMenu.visible = true
 			# currentCustomer += 1
 			# numberOfCustomer -= 1
+			$GlassBottle.play()
 			emit_signal("OrderInProgress")
 		else:
+			$BassStab.play()
 			print("can't take order")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -57,6 +61,7 @@ func _process(delta):
 
 func _on_customerTimer_timeout():
 	if numberOfCustomer < 5:
+		arrayOfMusic[randi() % arrayOfMusic.size() - 1].play()
 		print("numberOfCustomer",numberOfCustomer)
 		var mob = customer_node.instance()
 		var mob_spawn_location = get_node("Path2D/MobSpawnLocation")
@@ -64,6 +69,7 @@ func _on_customerTimer_timeout():
 		mob.position = mob_spawn_location.position
 		var velocity = Vector2(0, 200)
 		add_child(mob)
+		#$NewCustomer.play()
 		
 		allTheCustomers.push_back(mob)
 		#print(allTheCustomers[0],mob.customerOrder)
@@ -82,6 +88,7 @@ func _on_Node_plyerNotTakingOrder():
 
 func _on_customerGetingFood_area_entered(area):
 	customerIsReadyToOrder = true
+	$Piano.play()
 	pass # Replace with function body.
 
 func _on_customerGetingFood_area_exited(area):

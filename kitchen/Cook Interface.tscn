@@ -48,12 +48,10 @@ shader = SubResource( 2 )
 [node name="Cook Interface" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
 
 [node name="Panel" type="Panel" parent="."]
 show_behind_parent = true
@@ -222,8 +220,8 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Inventory/ScrollContainer"]
-margin_right = 135.0
-margin_bottom = 182.0
+margin_right = 8.0
+margin_bottom = 12.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
