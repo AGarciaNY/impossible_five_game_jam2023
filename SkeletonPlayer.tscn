@@ -397,7 +397,6 @@ bones = [ "hip", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "hip/ch
 
 [node name="Face" type="Polygon2D" parent="YSort/Head"]
 position = Vector2( 0, -339.028 )
-scale = Vector2( 1, 1 )
 z_index = 2
 texture = ExtResource( 1 )
 skeleton = NodePath("../../../Skeleton2D")
@@ -475,6 +474,15 @@ shape = SubResource( 4 )
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 226.292, 708.135 )
 z_index = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Camera2D"]
+margin_left = -4826.0
+margin_top = -2778.0
+margin_right = -4725.0
+margin_bottom = -2735.0
+rect_scale = Vector2( 20, 20 )
+text = "Hi there
+"
 
 [node name="Area2D" type="Area2D" parent="."]
 z_index = 2

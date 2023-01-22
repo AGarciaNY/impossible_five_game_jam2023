@@ -1,8 +1,19 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://kitchen/kitchen.tscn" type="PackedScene" id=1]
 [ext_resource path="res://game/gameplay.gd" type="Script" id=2]
 [ext_resource path="res://customer/customer.tscn" type="PackedScene" id=3]
+[ext_resource path="res://kitchen/CustomerOrderSelection.tscn" type="PackedScene" id=4]
+[ext_resource path="res://jam assets/sounds/BassStab.wav" type="AudioStream" id=5]
+[ext_resource path="res://jam assets/sounds/RandomSound.wav" type="AudioStream" id=6]
+[ext_resource path="res://jam assets/sounds/WindChime.wav" type="AudioStream" id=7]
+[ext_resource path="res://jam assets/sounds/RoboticEffect.wav" type="AudioStream" id=8]
+[ext_resource path="res://jam assets/sounds/RandomSound2.wav" type="AudioStream" id=9]
+[ext_resource path="res://jam assets/sounds/Bling.wav" type="AudioStream" id=10]
+[ext_resource path="res://jam assets/sounds/Crash.wav" type="AudioStream" id=11]
+[ext_resource path="res://jam assets/sounds/Magic.wav" type="AudioStream" id=12]
+[ext_resource path="res://jam assets/sounds/GlassBottle.wav" type="AudioStream" id=13]
+[ext_resource path="res://jam assets/sounds/Piano.wav" type="AudioStream" id=14]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -32,12 +43,7 @@ rotation = 1.60162
 collision_layer = 16
 collision_mask = 16
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="customerGetingFood"]
-light_mask = 0
-position = Vector2( 1088.88, 433 )
-shape = SubResource( 2 )
-
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="RichTextLabel" type="RichTextLabel" parent="customerGetingFood"]
 visible = false
 modulate = Color( 1, 0.223529, 0.223529, 1 )
 margin_left = 1066.0
@@ -48,6 +54,53 @@ rect_scale = Vector2( 4, 4 )
 tab_size = 11
 text = "E"
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="customerGetingFood"]
+light_mask = 0
+position = Vector2( 1088.88, 433 )
+shape = SubResource( 2 )
+
+[node name="customerMenu" parent="." instance=ExtResource( 4 )]
+visible = false
+margin_left = 803.0
+margin_top = 28.0
+margin_right = 915.0
+margin_bottom = 74.0
+
+[node name="NewCustomerSound" type="Node" parent="."]
+
+[node name="Magic" type="AudioStreamPlayer" parent="NewCustomerSound"]
+stream = ExtResource( 12 )
+
+[node name="RandomSound" type="AudioStreamPlayer" parent="NewCustomerSound"]
+stream = ExtResource( 6 )
+
+[node name="WindChime" type="AudioStreamPlayer" parent="NewCustomerSound"]
+stream = ExtResource( 7 )
+
+[node name="RoboticEffect" type="AudioStreamPlayer" parent="NewCustomerSound"]
+stream = ExtResource( 8 )
+
+[node name="RandomSound2" type="AudioStreamPlayer" parent="NewCustomerSound"]
+stream = ExtResource( 9 )
+
+[node name="Bling" type="AudioStreamPlayer" parent="NewCustomerSound"]
+stream = ExtResource( 10 )
+
+[node name="Crash" type="AudioStreamPlayer" parent="NewCustomerSound"]
+stream = ExtResource( 11 )
+
+[node name="BassStab" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+
+[node name="GlassBottle" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+
+[node name="Piano" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
+
+[connection signal="OrderFinished" from="." to="Node" method="_on_Node_OrderFinished"]
+[connection signal="OrderInProgress" from="." to="Node" method="_on_Node_OrderInProgress"]
+[connection signal="OrderInProgress" from="." to="customerMenu" method="_on_Node_OrderInProgress"]
 [connection signal="plyerNotTakingOrder" from="Node" to="." method="_on_Node_plyerNotTakingOrder"]
 [connection signal="plyerTakingOrder" from="Node" to="." method="_on_Node_plyerTakingOrder"]
 [connection signal="timeout" from="customerTimer" to="." method="_on_customerTimer_timeout"]

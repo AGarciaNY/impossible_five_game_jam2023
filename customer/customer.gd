@@ -3,13 +3,34 @@ extends KinematicBody2D
 var velocity = Vector2(0,0)
 var speed = 100
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+var foodMap = {
+	"spagetti": "res://jam assets/Foods/Food_Assets/94_spaghetti.png",
+	"meatball": "res://jam assets/Foods/Food_Assets/69_meatball.png",
+	"bread": "res://jam assets/Foods/Food_Assets/08_bread_dish.png",
+	"garlic bread": "res://jam assets/Foods/Food_Assets/48_garlicbread.png",
+	"loaf bread": "res://jam assets/Foods/Food_Assets/65_loafbread.png",
+	"gingerbread man": "res://jam assets/Foods/Food_Assets/52_gingerbreadman.png",
+	"steak":"res://jam assets/Foods/Food_Assets/95_steak.png",
+	"cake": "res://jam assets/Foods/Food_Assets/22_cheesecake.png",
+	"egg": "res://jam assets/Foods/Food_Assets/41_eggsalad_bowl.png",
+}
 
+var foodData = [
+	"spagetti",
+	"meatball",
+	"bread",
+	"garlic bread",
+	"loaf bread",
+	"gingerbread man",
+	"steak",
+	"cake",
+	"egg",
+]
+export var customerOrder = "food" 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
+	customerOrder = get_randem_food();
+	#print(customerOrder)
 	pass
 
 func _process(delta):
@@ -24,7 +45,6 @@ func move_coustomer():
 #func _process(delta):
 #	pass
 
+func get_randem_food():
+	return foodData[randi() % (foodData.size() - 1)]
 
-func _on_VisibilityNotifier2D_screen_exited():
-	#queue_free()
-	pass # Replace with function body.
