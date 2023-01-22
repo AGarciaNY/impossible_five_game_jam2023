@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://jam assets/art/bricks.png" type="Texture" id=1]
 [ext_resource path="res://jam assets/art/coldstone.png" type="Texture" id=2]
@@ -19,6 +19,8 @@
 [ext_resource path="res://kitchen/CookManager.gd" type="Script" id=17]
 [ext_resource path="res://kitchen/kitchen.gd" type="Script" id=18]
 [ext_resource path="res://jam assets/art/icystone.png" type="Texture" id=19]
+[ext_resource path="res://Menu/Roboto-Bold.ttf" type="DynamicFontData" id=20]
+[ext_resource path="res://kitchen/timer_label.gd" type="Script" id=21]
 
 [sub_resource type="TileSet" id=1]
 0/name = "bricks.png 0"
@@ -140,6 +142,10 @@ void fragment() {
 shader = SubResource( 9 )
 shader_param/outline_width = 4.0
 shader_param/outline_color = Color( 0.462745, 0.0705882, 0.937255, 1 )
+
+[sub_resource type="DynamicFont" id=13]
+size = 60
+font_data = ExtResource( 20 )
 
 [sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 32.5, 57.5 )
@@ -363,6 +369,71 @@ offset = Vector2( -232.727, -790.589 )
 [node name="Crate" type="Sprite" parent="Dark-green"]
 position = Vector2( -287.879, -134.559 )
 scale = Vector2( 6.31973, 1.3032 )
+texture = ExtResource( 8 )
+
+[node name="Crate2" type="Sprite" parent="Dark-green"]
+position = Vector2( -6569.7, -23.5297 )
+scale = Vector2( 7.99683, 1.3032 )
+texture = ExtResource( 8 )
+
+[node name="Crate3" type="Sprite" parent="Dark-green"]
+position = Vector2( -6569.7, 441.177 )
+scale = Vector2( 7.99683, 1.3032 )
+texture = ExtResource( 8 )
+
+[node name="Crate5" type="Sprite" parent="Dark-green"]
+position = Vector2( -6183.33, 952.941 )
+scale = Vector2( 6.44209, 1.3032 )
+texture = ExtResource( 8 )
+
+[node name="Crate6" type="Sprite" parent="Dark-green"]
+position = Vector2( -6181.82, 905.882 )
+scale = Vector2( 6.44209, 1.3032 )
+texture = ExtResource( 8 )
+
+[node name="Crate13" type="Sprite" parent="Dark-green"]
+position = Vector2( -6036.36, 1323.53 )
+scale = Vector2( 6.44209, 1.3032 )
+texture = ExtResource( 8 )
+
+[node name="Crate7" type="Sprite" parent="Dark-green"]
+position = Vector2( -11975.8, 935.294 )
+scale = Vector2( 12.4307, 1.3032 )
+texture = ExtResource( 8 )
+
+[node name="Crate14" type="Sprite" parent="Dark-green"]
+position = Vector2( -11854.5, 1341.18 )
+scale = Vector2( 12.4307, 1.3032 )
+texture = ExtResource( 8 )
+
+[node name="Crate8" type="Sprite" parent="Dark-green"]
+position = Vector2( -8509.09, 929.412 )
+scale = Vector2( 6.31973, 1.3032 )
+texture = ExtResource( 8 )
+
+[node name="Crate15" type="Sprite" parent="Dark-green"]
+position = Vector2( -8412.12, 1329.41 )
+scale = Vector2( 6.31973, 1.3032 )
+texture = ExtResource( 8 )
+
+[node name="Crate9" type="Sprite" parent="Dark-green"]
+position = Vector2( -11806.1, 511.765 )
+scale = Vector2( 11.2791, 1.3032 )
+texture = ExtResource( 8 )
+
+[node name="Crate10" type="Sprite" parent="Dark-green"]
+position = Vector2( -9187.88, 41.1765 )
+scale = Vector2( 6.31973, 1.3032 )
+texture = ExtResource( 8 )
+
+[node name="Crate12" type="Sprite" parent="Dark-green"]
+position = Vector2( -8775.76, 511.765 )
+scale = Vector2( 6.31973, 1.3032 )
+texture = ExtResource( 8 )
+
+[node name="Crate11" type="Sprite" parent="Dark-green"]
+position = Vector2( -12290.9, 35.2942 )
+scale = Vector2( 10.876, 1.3032 )
 texture = ExtResource( 8 )
 
 [node name="TileMap3" type="TileMap" parent="."]
@@ -674,6 +745,16 @@ texture = ExtResource( 12 )
 region_enabled = true
 region_rect = Rect2( 4, 128, 64, 64 )
 
+[node name="Metalcrate5" type="Sprite" parent="KitchenArea/KitchenFloor/KitchenTiles9"]
+position = Vector2( -816.839, 340.435 )
+scale = Vector2( 0.139395, 0.85382 )
+texture = ExtResource( 11 )
+
+[node name="Metalcrate6" type="Sprite" parent="KitchenArea/KitchenFloor/KitchenTiles9"]
+position = Vector2( -762.926, 338.694 )
+scale = Vector2( 0.151345, 0.849088 )
+texture = ExtResource( 11 )
+
 [node name="KitchenTiles10" type="Sprite" parent="KitchenArea/KitchenFloor"]
 position = Vector2( -208.761, -65.1282 )
 scale = Vector2( 0.667901, 0.279111 )
@@ -906,12 +987,6 @@ offset = Vector2( 1.43799, -92.8367 )
 [node name="SkeletonPlayer" parent="." instance=ExtResource( 10 )]
 position = Vector2( 140.927, 353.672 )
 
-[node name="Head" parent="SkeletonPlayer/YSort" index="5"]
-polygon = PoolVector2Array( 43.5644, 50.495, 10.8911, 156.436, 10.8911, 247.525, 58.4158, 325.743, 131.683, 373.267, 252.475, 392.079, 370.297, 364.356, 455.446, 284.158, 484.158, 198.02, 456.436, 28.7129, 424.752, 3.9604, 262.376, 3.9604, 100.99, 15.8416 )
-
-[node name="Face" parent="SkeletonPlayer/YSort/Head" index="1"]
-polygon = PoolVector2Array( 73.1343, 426.866, 34.3284, 498.507, 126.866, 600, 207.463, 688.06, 274.627, 688.06, 353.731, 616.418, 447.761, 492.537, 431.343, 414.925 )
-
 [node name="Camera2D" parent="SkeletonPlayer" index="4"]
 position = Vector2( 226.292, -549.022 )
 current = true
@@ -930,6 +1005,18 @@ margin_top = 92.6129
 margin_right = 258.401
 margin_bottom = 92.6129
 
+[node name="timer_label" type="Label" parent="CanvasLayer"]
+margin_left = 611.0
+margin_top = 9.0
+margin_right = 972.0
+margin_bottom = 154.0
+custom_colors/font_color = Color( 0.972549, 0.0313726, 0.0313726, 1 )
+custom_fonts/font = SubResource( 13 )
+text = "\"00:00:00.00\"
+"
+align = 1
+script = ExtResource( 21 )
+
 [node name="playerReadyToTakeOrder" type="Area2D" parent="."]
 collision_layer = 8
 
@@ -941,5 +1028,6 @@ shape = SubResource( 11 )
 [connection signal="area_exited" from="KitchenArea/refrig/Area2D" to="CookManager" method="_on_Area2D_area_exited"]
 [connection signal="area_exited" from="playerReadyToTakeOrder" to="." method="_on_playerReadyToTakeOrder_area_exited"]
 [connection signal="body_entered" from="playerReadyToTakeOrder" to="." method="_on_playerReadyToTakeOrder_body_entered"]
+[connection signal="body_entered" from="playerReadyToTakeOrder" to="CanvasLayer/timer_label" method="_on_playerReadyToTakeOrder_body_entered"]
 
 [editable path="SkeletonPlayer"]

@@ -6,7 +6,7 @@
 [ext_resource path="res://Menu/Roboto-Bold.ttf" type="DynamicFontData" id=4]
 
 [sub_resource type="DynamicFont" id=1]
-size = 48
+size = 42
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=2]
@@ -29,12 +29,12 @@ texture = ExtResource( 2 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Letter"]
 modulate = Color( 0.0313726, 0.0313726, 0.0313726, 1 )
-margin_left = -1102.73
-margin_top = -468.639
-margin_right = 1158.27
-margin_bottom = 903.361
+margin_left = -1089.0
+margin_top = -472.0
+margin_right = 1087.0
+margin_bottom = 900.0
 custom_fonts/normal_font = SubResource( 1 )
-text = "Welcome my son Robby,
+text = "Happy Birthday  my son Robby,
 
 I am to relate this message about our how the family resturants has been in shambles leading us to hide. Oh the agony!
 
@@ -49,6 +49,8 @@ Thus, to sum up the basis issues can be only resolved as you attempt to drain th
 We know this challegene to consist of different hurdles of timing energy, thinking about efficiency, and we ask you to be pressured this 5 min concept we built.
 
 Thus Robby, we ask to surround yourself with many foods left in the refrigerator and not to make assumptions about our customers, provide them with a satisfactory meal, and you to get a earn high score.
+
+Love, Dad
 "
 
 [node name="letterButton" type="Button" parent="Letter"]
