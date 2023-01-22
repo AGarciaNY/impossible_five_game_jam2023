@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://jam assets/art/bricks.png" type="Texture" id=1]
 [ext_resource path="res://jam assets/art/coldstone.png" type="Texture" id=2]
@@ -19,9 +19,12 @@
 [ext_resource path="res://kitchen/CookManager.gd" type="Script" id=17]
 [ext_resource path="res://kitchen/kitchen.gd" type="Script" id=18]
 [ext_resource path="res://jam assets/art/icystone.png" type="Texture" id=19]
+
+[ext_resource path="res://Menu/Roboto-Bold.ttf" type="DynamicFontData" id=20]
 [ext_resource path="res://kitchen/timer_label.gd" type="Script" id=21]
 [ext_resource path="res://jam assets/sounds/Impact.wav" type="AudioStream" id=22]
-[ext_resource path="res://jam assets/sounds/Boing.mp3" type="AudioStream" id=24]
+[ext_resource path="res://jam assets/sounds/Boing.mp3" type="AudioStream" id=23]
+
 
 [sub_resource type="TileSet" id=1]
 0/name = "bricks.png 0"
@@ -143,6 +146,11 @@ void fragment() {
 shader = SubResource( 10 )
 shader_param/outline_width = 4.0
 shader_param/outline_color = Color( 0.462745, 0.0705882, 0.937255, 1 )
+
+
+[sub_resource type="DynamicFont" id=13]
+size = 60
+font_data = ExtResource( 20 )
 
 [sub_resource type="RectangleShape2D" id=12]
 extents = Vector2( 32.5, 57.5 )
@@ -984,6 +992,7 @@ offset = Vector2( 1.43799, -92.8367 )
 [node name="SkeletonPlayer" parent="." instance=ExtResource( 10 )]
 position = Vector2( 140.927, 353.672 )
 
+
 [node name="Left_Arm" parent="SkeletonPlayer/YSort" index="0"]
 bones = [ NodePath("hip"), PoolRealArray( 0, 0, 0, 0, 0 ), NodePath("hip/chest"), PoolRealArray( 0, 0, 0, 0, 0 ), NodePath("hip/chest/Head"), PoolRealArray( 0, 0, 0, 0, 0 ), NodePath("hip/chest/Arm_Left"), PoolRealArray( 0.5, 0.5, 0.5, 0.5, 0.5 ), NodePath("hip/chest/Arm_Right"), PoolRealArray( 0, 0, 0, 0, 0 ), NodePath("hip/Leg_Right"), PoolRealArray( 0, 0, 0, 0, 0 ), NodePath("hip/Leg_Left"), PoolRealArray( 0, 0, 0, 0, 0 ) ]
 
@@ -1005,6 +1014,7 @@ bones = [ NodePath("hip"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 
 [node name="Face" parent="SkeletonPlayer/YSort/Head" index="0"]
 bones = [ NodePath("hip"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/chest"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/chest/Head"), PoolRealArray( 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5 ), NodePath("hip/chest/Arm_Left"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/chest/Arm_Right"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/Leg_Right"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/Leg_Left"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ) ]
 
+
 [node name="Camera2D" parent="SkeletonPlayer" index="4"]
 position = Vector2( 226.292, -549.022 )
 current = true
@@ -1015,7 +1025,9 @@ scale = Vector2( 0.1, 0.1 )
 script = ExtResource( 17 )
 
 [node name="Impact" type="AudioStreamPlayer" parent="CookManager"]
+
 stream = ExtResource( 24 )
+
 
 [node name="Closing" type="AudioStreamPlayer" parent="CookManager"]
 stream = ExtResource( 22 )
