@@ -3,77 +3,31 @@ extends KinematicBody2D
 var velocity = Vector2(0,0)
 var speed = 100
 
+var foodMap = {
+	"spagetti": "res://jam assets/Foods/Food_Assets/94_spaghetti.png",
+	"meatball": "res://jam assets/Foods/Food_Assets/69_meatball.png",
+	"bread": "res://jam assets/Foods/Food_Assets/08_bread_dish.png",
+	"garlic bread": "res://jam assets/Foods/Food_Assets/48_garlicbread.png",
+	"loaf bread": "res://jam assets/Foods/Food_Assets/65_loafbread.png",
+	"gingerbread man": "res://jam assets/Foods/Food_Assets/52_gingerbreadman.png",
+	"steak":"res://jam assets/Foods/Food_Assets/95_steak.png",
+	"cake": "res://jam assets/Foods/Food_Assets/22_cheesecake.png",
+	"egg": "res://jam assets/Foods/Food_Assets/41_eggsalad_bowl.png",
+}
+
 var foodData = [
-	{	
-		"name": "energy spagetti" ,
-		"menu price": 20,
-		"expenses": 10,
-		"ing": [
-			"spagetti",
-			"meatball"
-		],
-		"recipe": [
-			"COOK",
-			"COMBINE",
-		],
-	},
-	 {
-		"name": "nature steak",
-		"menu price": 50,
-		"expenses": 20,
-		"ing": [
-			"steak",
-		],
-		"recipe": [
-			"COOK",
-		],
-	},
-	{
-		"name": "birthday cake",
-		"menu price": 80,
-		"expenses": 30,
-		"ing": [
-			"cake",
-		],
-		"recipe": ["check the fridge"]
-	},
-	{
-		"name": "scream to bread",
-		"menu price": 15,
-		"expenses": 5,
-		"ing": [
-			"bread",
-			"garlic bread",
-			"gingermanbread",
-			"loaf bread"
-		],
-		"recipe": [
-			"COMBINE",
-		],
-	},
-	{
-		"name": "burger of the month",
-		"menu price": 50,
-		"expenses": 10,
-		"ing": [
-			"bread",
-			"steak",
-			"egg salad",
-		],
-		"recipe": [
-			"COOK",
-			"COMBINE",
-		],
-	}
+	"spagetti",
+	"meatball",
+	"bread",
+	"garlic bread",
+	"loaf bread",
+	"gingerbread man",
+	"steak",
+	"cake",
+	"egg",
 ]
 export var customerOrder = "food" 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	customerOrder = get_randem_food();
 	#print(customerOrder)

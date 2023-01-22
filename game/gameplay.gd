@@ -33,21 +33,15 @@ func _process(delta):
 			#print(allTheCustomers[currentCustomer].customerOrder)
 			#remove_child(allTheCustomers[currentCustomer])
 			var getCurrentCustomerOrder = allTheCustomers[currentCustomer].customerOrder
-			$customerMenu.nameOfFood = getCurrentCustomerOrder.name
-			$customerMenu.priceOfFood = getCurrentCustomerOrder["menu price"]
-			$customerMenu.itemsOfFood = "ingredients: "
-			
-			for foodItem in getCurrentCustomerOrder.ing:
-				$customerMenu.itemsOfFood += ", " + foodItem
-				
-			$customerMenu.recipeOfFood = ""
-			
-			for foodItem in getCurrentCustomerOrder.recipe:
-				$customerMenu.recipeOfFood += ", " + foodItem
-			
+			$customerMenu.itemsOfFood = getCurrentCustomerOrder
 			$customerMenu.visible = true
-			# currentCustomer += 1
-			# numberOfCustomer -= 1
+			var hasFood = get_node("customerMenu").hasCorrectFood
+			if hasFood:
+				get_node("customerMenu").give_order()
+				remove_child(allTheCustomers[currentCustomer])
+				currentCustomer += 1
+				numberOfCustomer -= 1
+				
 			$GlassBottle.play()
 			emit_signal("OrderInProgress")
 		else:

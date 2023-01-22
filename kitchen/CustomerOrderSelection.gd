@@ -65,15 +65,18 @@ var foodData = [
 ]
 export var nameOfFood = ""
 export var priceOfFood = ""
-export var recipeOfFood = ""
 export var itemsOfFood = ""
+var hasCorrectFood = false
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+func inventoryHasItem(item):
+	var inventory = get_node("/root/Inventory").inventory
+	var count = 0
+	while count < inventory.size():
+		if inventory[count] == item:
+			return true
+		count += 1
+	return false
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
 		#foodData.push([key,get_node("/root/FoodData")[key]])
 	randomize()
@@ -82,17 +85,22 @@ func _ready():
 
 func get_randem_food(obj):
 	return foodData[randi() % (foodData.size() - 1)]
-	
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
 
 func _on_Node_OrderInProgress():
-	$foodName.text = "food: " + nameOfFood
-	$price.text = "price: " + str(priceOfFood)
-	$recipe.text = "recipe: " + recipeOfFood
 	$items.text = itemsOfFood
-	pass # Replace with function body.
+	if inventoryHasItem(itemsOfFood):
+		hasCorrectFood = true
+
+func give_order():
+	var inventory = get_node("/root/Inventory").inventory
+	var newInventory = []
+	var count = 0
+	var foundFood = false
+	while count < inventory.size():
+		if inventory[count] == itemsOfFood && !foundFood:
+			foundFood = true
+		else:
+			newInventory.push_back(inventory[count])
+		count += 1
+	get_node("/root/Inventory").inventory = newInventory
+	hasCorrectFood = false

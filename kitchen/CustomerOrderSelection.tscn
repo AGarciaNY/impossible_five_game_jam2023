@@ -6,6 +6,9 @@
 margin_right = 112.0
 margin_bottom = 46.0
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Panel" type="Panel" parent="."]
 margin_right = 525.0
@@ -22,30 +25,6 @@ margin_left = 172.0
 margin_top = 57.0
 margin_right = 362.0
 margin_bottom = 89.0
-text = "Taking Customer Order
-"
-
-[node name="foodName" type="RichTextLabel" parent="."]
-margin_left = 23.0
-margin_top = 84.0
-margin_right = 213.0
-margin_bottom = 116.0
-text = "Taking Customer Order
-"
-
-[node name="price" type="RichTextLabel" parent="."]
-margin_left = 24.0
-margin_top = 115.0
-margin_right = 251.0
-margin_bottom = 144.0
-text = "Taking Customer Order
-"
-
-[node name="recipe" type="RichTextLabel" parent="."]
-margin_left = 22.0
-margin_top = 241.0
-margin_right = 264.0
-margin_bottom = 290.0
 text = "Taking Customer Order
 "
 
