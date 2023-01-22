@@ -51,7 +51,7 @@ func _on_Garlic_Bread_button_up():
 
 
 func _on_Ginger_Breadman_button_down():
-	occupyEmpty("res://jam assets/Foods/Food_Assets/52_gingerbreadman.png", "ginger breadman")
+	occupyEmpty("res://jam assets/Foods/Food_Assets/52_gingerbreadman.png", "gingerbread man")
 
 func _on_Loaf_Bread_button_down():
 	occupyEmpty("res://jam assets/Foods/Food_Assets/65_loafbread.png", "loaf bread")
