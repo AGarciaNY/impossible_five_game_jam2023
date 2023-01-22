@@ -1,6 +1,7 @@
 extends Node
 
 signal plyerTakingOrder
+signal plyerNotTakingOrder
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -17,6 +18,11 @@ func _ready():
 
 
 func _on_playerReadyToTakeOrder_body_entered(body):
-	#print("hi")
+	print("hi")
 	emit_signal("plyerTakingOrder")
+	pass # Replace with function body.
+
+
+func _on_playerReadyToTakeOrder_area_exited(area):
+	emit_signal("plyerNotTakingOrder")
 	pass # Replace with function body.
