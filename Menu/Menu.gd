@@ -15,14 +15,11 @@ func _ready():
 #func _process(delta):
 #	pass
 
-
 func _on_Start_pressed():
-	var music = $Piano.play();
-	get_tree().change_scene("res://kitchen/kitchen.tscn");
+	get_tree().change_scene("res://Menu/Note/letter.tscn");
 	
 func _on_Tutorial_pressed():
 	get_tree().change_scene("res://Menu/Tutorial Part/Tutorial.tscn");
 
 func _on_Quit_pressed():
 	get_tree().quit()
-
