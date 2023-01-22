@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://jam assets/art/robysplit.png" type="Texture" id=1]
 [ext_resource path="res://SkeletonPlayer.gd" type="Script" id=2]
+[ext_resource path="res://jam assets/art/saw.png" type="Texture" id=3]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Crouch"
@@ -330,14 +331,17 @@ height = 106.316
 
 [node name="SkeletonPlayer" type="KinematicBody2D"]
 scale = Vector2( 0.1, 0.1 )
+z_index = 2
 collision_mask = 10
 script = ExtResource( 2 )
 
 [node name="YSort" type="Node2D" parent="."]
+z_index = 2
 
 [node name="Left_Arm" type="Polygon2D" parent="YSort"]
 position = Vector2( 300, -271.028 )
 rotation = 0.270432
+z_index = 2
 texture = ExtResource( 1 )
 skeleton = NodePath("../../Skeleton2D")
 polygon = PoolVector2Array( 19.403, 708.955, 114.925, 707.463, 102.985, 1065.67, 2.98507, 1064.18, 4.47761, 702.985 )
@@ -347,6 +351,7 @@ bones = [ "hip", PoolRealArray( 0, 0, 0, 0, 0 ), "hip/chest", PoolRealArray( 0, 
 [node name="Right_Arm" type="Polygon2D" parent="YSort"]
 position = Vector2( 92.4941, -259.028 )
 rotation = -0.231786
+z_index = 2
 texture = ExtResource( 1 )
 skeleton = NodePath("../../Skeleton2D")
 polygon = PoolVector2Array( 19.403, 708.955, 114.925, 707.463, 102.985, 1065.67, 2.98507, 1064.18, 4.47761, 702.985 )
@@ -355,6 +360,7 @@ bones = [ "hip", PoolRealArray( 0, 0, 0, 0, 0 ), "hip/chest", PoolRealArray( 0, 
 
 [node name="Body" type="Polygon2D" parent="YSort"]
 position = Vector2( -57.181, -372.664 )
+z_index = 2
 texture = ExtResource( 1 )
 skeleton = NodePath("../../Skeleton2D")
 polygon = PoolVector2Array( 171.642, 692.537, 429.851, 689.552, 423.881, 1186.57, 189.552, 1186.57 )
@@ -364,6 +370,7 @@ bones = [ "hip", PoolRealArray( 0, 0, 0, 0 ), "hip/chest", PoolRealArray( 1, 1, 
 [node name="Right_Leg" type="Polygon2D" parent="YSort"]
 position = Vector2( -384.83, -381.384 )
 rotation = -0.177704
+z_index = 2
 texture = ExtResource( 1 )
 skeleton = NodePath("../../Skeleton2D")
 polygon = PoolVector2Array( 385.714, 1205.3, 552.632, 1204.55, 552.632, 1555.67, 386.466, 1555.67 )
@@ -373,6 +380,7 @@ bones = [ "hip", PoolRealArray( 0, 0, 0, 0 ), "hip/chest", PoolRealArray( 0, 0, 
 [node name="Left_Leg" type="Polygon2D" parent="YSort"]
 position = Vector2( 414.164, -447.031 )
 rotation = 0.270432
+z_index = 2
 texture = ExtResource( 1 )
 skeleton = NodePath("../../Skeleton2D")
 polygon = PoolVector2Array( 224.286, 1566.94, 218.571, 1185.51, 104.286, 1155.51, 34.2857, 1188.36, 27.1429, 1552.65 )
@@ -380,6 +388,7 @@ uv = PoolVector2Array( 224.286, 1566.94, 218.571, 1185.51, 104.286, 1155.51, 34.
 bones = [ "hip", PoolRealArray( 0, 0, 0, 0, 0 ), "hip/chest", PoolRealArray( 0, 0, 0, 0, 0 ), "hip/chest/Head", PoolRealArray( 0, 0, 0, 0, 0 ), "hip/chest/Arm_Left", PoolRealArray( 0, 0, 0, 0, 0 ), "hip/chest/Arm_Right", PoolRealArray( 0, 0, 0, 0, 0 ), "hip/Leg_Right", PoolRealArray( 0, 0, 0, 0, 0 ), "hip/Leg_Left", PoolRealArray( 0.5, 0.5, 0.5, 0.5, 0.5 ) ]
 
 [node name="Head" type="Polygon2D" parent="YSort"]
+z_index = 2
 texture = ExtResource( 1 )
 skeleton = NodePath("../../Skeleton2D")
 polygon = PoolVector2Array( 43.5644, 50.495, 10.8911, 156.436, 10.8911, 247.525, 58.4158, 325.743, 131.683, 373.267, 252.475, 392.079, 370.297, 364.356, 455.446, 284.158, 484.158, 198.02, 456.436, 28.7129, 424.752, 3.9604, 262.376, 3.9604, 100.99, 15.8416 )
@@ -388,50 +397,68 @@ bones = [ "hip", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "hip/ch
 
 [node name="Face" type="Polygon2D" parent="YSort/Head"]
 position = Vector2( 0, -339.028 )
+scale = Vector2( 1, 1 )
+z_index = 2
 texture = ExtResource( 1 )
 skeleton = NodePath("../../../Skeleton2D")
 polygon = PoolVector2Array( 73.1343, 426.866, 34.3284, 498.507, 126.866, 600, 207.463, 688.06, 274.627, 688.06, 353.731, 616.418, 447.761, 492.537, 431.343, 414.925 )
 uv = PoolVector2Array( 73.1343, 426.866, 34.3284, 498.507, 126.866, 600, 207.463, 688.06, 274.627, 688.06, 353.731, 616.418, 447.761, 492.537, 431.343, 414.925 )
 bones = [ "hip", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ), "hip/chest", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ), "hip/chest/Head", PoolRealArray( 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5 ), "hip/chest/Arm_Left", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ), "hip/chest/Arm_Right", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ), "hip/Leg_Right", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ), "hip/Leg_Left", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ) ]
 
+[node name="Hair" type="Sprite" parent="YSort/Head/Face"]
+modulate = Color( 0.223529, 0.694118, 0.129412, 1 )
+position = Vector2( 260, 649.028 )
+scale = Vector2( 0.582581, 0.418809 )
+z_index = 1
+z_as_relative = false
+texture = ExtResource( 3 )
+
 [node name="Skeleton2D" type="Skeleton2D" parent="."]
 visible = false
+z_index = 2
 
 [node name="hip" type="Bone2D" parent="Skeleton2D"]
 position = Vector2( 236.608, 727.99 )
+z_index = 2
 rest = Transform2D( 1, 0, 0, 1, 236.608, 727.99 )
 
 [node name="chest" type="Bone2D" parent="Skeleton2D/hip"]
 position = Vector2( -0.177433, -35.1933 )
+z_index = 2
 rest = Transform2D( 1, 0, 0, 1, -2.29633, -189.875 )
 
 [node name="Head" type="Bone2D" parent="Skeleton2D/hip/chest"]
 position = Vector2( 5.28967, -47.7591 )
 rotation = -1.5708
+z_index = 2
 rest = Transform2D( -4.37114e-08, -1, 1, -4.37114e-08, -5.30493, -166.419 )
 default_length = 168.0
 
 [node name="Arm_Left" type="Bone2D" parent="Skeleton2D/hip/chest"]
 position = Vector2( -88.4966, -34.4869 )
 rotation = -3.55049
+z_index = 2
 rest = Transform2D( -0.401948, 0.915663, -0.915663, -0.401948, -88.4966, -34.4869 )
 default_length = 179.0
 
 [node name="Arm_Right" type="Bone2D" parent="Skeleton2D/hip/chest"]
 position = Vector2( 130.844, -35.9184 )
 rotation = -5.85336
+z_index = 2
 rest = Transform2D( 0.114762, 0.993393, -0.993393, 0.114762, 118.13, -16.848 )
 default_length = 179.0
 
 [node name="Leg_Right" type="Bone2D" parent="Skeleton2D/hip"]
 position = Vector2( 82.8713, 113.915 )
 rotation = 1.45578
+z_index = 2
 rest = Transform2D( 0.114762, 0.993393, -0.993393, 0.114762, 82.8713, 113.915 )
 default_length = 179.0
 
 [node name="Leg_Left" type="Bone2D" parent="Skeleton2D/hip"]
 position = Vector2( -75.9492, 109.42 )
 rotation = -4.63036
+z_index = 2
 rest = Transform2D( -0.0819388, 0.996637, -0.996637, -0.0819388, -75.9492, 109.42 )
 default_length = 179.0
 
@@ -442,12 +469,15 @@ anims/Walk = SubResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 220, 820 )
+z_index = 2
 shape = SubResource( 4 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 226.292, 708.135 )
+z_index = 2
 
 [node name="Area2D" type="Area2D" parent="."]
+z_index = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 220, 820 )

@@ -73,6 +73,6 @@ stream = ExtResource( 3 )
 autoplay = true
 
 [node name="55HotdogSauce" type="Sprite" parent="."]
-position = Vector2( 129, 338.375 )
+position = Vector2( 423, 389 )
 scale = Vector2( 4, 4.46094 )
 texture = ExtResource( 4 )
