@@ -20,9 +20,8 @@ func _on_Start_pressed():
 	var music = $Piano.play();
 	get_tree().change_scene("res://kitchen/kitchen.tscn");
 	
-#func _on_Tutorial_pressed():
-#	var options = load().instance()
-#	get_tree().current_scene.add_child(options)
+func _on_Tutorial_pressed():
+	get_tree().change_scene("res://Menu/Tutorial Part/Tutorial.tscn");
 
 func _on_Quit_pressed():
 	get_tree().quit()
