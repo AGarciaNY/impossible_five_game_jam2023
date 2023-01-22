@@ -10,6 +10,8 @@ extents = Vector2( 40.75, 26.5 )
 radius = 21.095
 
 [node name="RigidBody2D" type="KinematicBody2D"]
+collision_layer = 4
+collision_mask = 6
 script = ExtResource( 2 )
 
 [node name="Hand" type="Sprite" parent="."]
@@ -26,5 +28,6 @@ collision_layer = 16
 collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+light_mask = 16
 position = Vector2( 91, 46 )
 shape = SubResource( 2 )

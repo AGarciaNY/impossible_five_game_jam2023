@@ -15,6 +15,7 @@ func _ready():
 func _process(delta):
 	move_coustomer()
 	pass
+
 func move_coustomer():
 	velocity.x = speed
 	velocity.y -= 0
