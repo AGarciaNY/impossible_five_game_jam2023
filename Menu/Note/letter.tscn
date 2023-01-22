@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Menu/pdark.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Menu/Note/card-with-red-envelope.jpg" type="Texture" id=2]
 [ext_resource path="res://Menu/Note/letterButton.gd" type="Script" id=3]
 [ext_resource path="res://Menu/Roboto-Bold.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://jam assets/sounds/Scream.wav" type="AudioStream" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 48
@@ -21,6 +22,9 @@ margin_top = 2.0
 margin_right = 2.0
 margin_bottom = 2.0
 rect_pivot_offset = Vector2( 1894, 270 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Letter" type="Sprite" parent="."]
 position = Vector2( 527, 245 )
@@ -61,5 +65,12 @@ custom_fonts/font = SubResource( 2 )
 text = "PrESS TO rEADY"
 flat = true
 script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Letter"]
+stream = ExtResource( 5 )
+autoplay = true
 
 [connection signal="pressed" from="Letter/letterButton" to="Letter/letterButton" method="_on_letterButton_pressed"]

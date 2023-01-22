@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://jam assets/art/bricks.png" type="Texture" id=1]
 [ext_resource path="res://jam assets/art/coldstone.png" type="Texture" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://jam assets/art/icystone.png" type="Texture" id=19]
 [ext_resource path="res://jam assets/sounds/Impact.wav" type="AudioStream" id=20]
 [ext_resource path="res://jam assets/sounds/DiceRoll.wav" type="AudioStream" id=21]
+[ext_resource path="res://jam assets/sounds/Boing.mp3" type="AudioStream" id=22]
 
 [sub_resource type="TileSet" id=1]
 0/name = "bricks.png 0"
@@ -940,6 +941,9 @@ script = ExtResource( 17 )
 
 [node name="Impact" type="AudioStreamPlayer" parent="CookManager"]
 stream = ExtResource( 20 )
+
+[node name="Closing" type="AudioStreamPlayer" parent="CookManager"]
+stream = ExtResource( 22 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

@@ -10,6 +10,8 @@ func _on_Area2D_area_entered(_area):
 #hide Pantry
 func _on_Area2D_area_exited(_area):
 	pantry.visible = false
+	$Closing.play()
+	
 
 func _on_CookArea_area_entered(_area):
 	stove.populateInventory()
