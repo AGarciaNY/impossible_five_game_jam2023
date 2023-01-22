@@ -1,14 +1,15 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://jam assets/art/arrowUp.png" type="Texture" id=1]
 [ext_resource path="res://jam assets/art/arrowSteepDown.png" type="Texture" id=2]
 [ext_resource path="res://jam assets/art/arrowForward.png" type="Texture" id=3]
-[ext_resource path="res://Button.gd" type="Script" id=4]
+[ext_resource path="res://Menu/Tutorial Part/Button.gd" type="Script" id=4]
 [ext_resource path="res://Menu/pdark.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://Menu/Tutorial Part/Keyboard Letters and Symbols.png" type="Texture" id=6]
 [ext_resource path="res://Menu/Tutorial Part/Keyboard Extras.png" type="Texture" id=7]
 [ext_resource path="res://Menu/Roboto-Bold.ttf" type="DynamicFontData" id=8]
 [ext_resource path="res://jam assets/art/orb.png" type="Texture" id=9]
+[ext_resource path="res://jam assets/sounds/Boing.mp3" type="AudioStream" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 size = 72
@@ -88,10 +89,10 @@ anchor_left = -2.771
 anchor_top = -3.703
 anchor_right = -2.771
 anchor_bottom = -3.703
-margin_left = 764.399
-margin_top = 677.698
-margin_right = 1012.4
-margin_bottom = 746.698
+margin_left = 765.399
+margin_top = 700.698
+margin_right = 1013.4
+margin_bottom = 769.698
 rect_pivot_offset = Vector2( -221, -180 )
 custom_colors/font_color_disabled = Color( 0.972549, 0.960784, 0.960784, 1 )
 custom_fonts/font = SubResource( 2 )
@@ -110,39 +111,32 @@ region_enabled = true
 region_rect = Rect2( 1, 115, 59, 11 )
 
 [node name="KeyLetters2" type="Sprite" parent="ColorRect/HowToPlay"]
-position = Vector2( 603, 121 )
+position = Vector2( 594, 127 )
 scale = Vector2( 3.14024, 3.90909 )
 texture = ExtResource( 6 )
 region_enabled = true
 region_rect = Rect2( 65, 147, 13, 11 )
 
 [node name="Shift" type="Sprite" parent="ColorRect/HowToPlay"]
-position = Vector2( 610, -62 )
+position = Vector2( 601, -58 )
 scale = Vector2( 3.69643, 2.875 )
 texture = ExtResource( 7 )
 region_enabled = true
 region_rect = Rect2( 2, 83, 28, 11 )
 
 [node name="KeyCtrl" type="Sprite" parent="ColorRect/HowToPlay"]
-position = Vector2( 621, 37 )
+position = Vector2( 607, 37 )
 scale = Vector2( 3.69643, 2.875 )
 texture = ExtResource( 7 )
 region_enabled = true
 region_rect = Rect2( 4, 99, 24, 11 )
 
-[node name="KeyCtrl2" type="Sprite" parent="ColorRect/HowToPlay"]
-position = Vector2( 291, 123 )
-scale = Vector2( 3.69643, 2.875 )
-texture = ExtResource( 7 )
-region_enabled = true
-region_rect = Rect2( 65, 99, 30, 11 )
-
 [node name="Sprint" type="RichTextLabel" parent="ColorRect/HowToPlay"]
 modulate = Color( 0.0392157, 0.164706, 0.427451, 1 )
-margin_left = 443.0
-margin_top = -86.0
-margin_right = 555.0
-margin_bottom = -36.0
+margin_left = 427.0
+margin_top = -80.0
+margin_right = 539.0
+margin_bottom = -30.0
 custom_fonts/normal_font = SubResource( 3 )
 text = "Sprint:
 "
@@ -150,32 +144,43 @@ scroll_active = false
 
 [node name="Crouch" type="RichTextLabel" parent="ColorRect/HowToPlay"]
 modulate = Color( 0.0705882, 0.180392, 0.411765, 1 )
-margin_left = 440.0
-margin_top = 14.0
-margin_right = 570.0
-margin_bottom = 55.0
+margin_left = 422.0
+margin_top = 17.0
+margin_right = 552.0
+margin_bottom = 58.0
 custom_fonts/normal_font = SubResource( 3 )
 text = "Crouch:
 "
 scroll_active = false
 
-[node name="Space" type="RichTextLabel" parent="ColorRect/HowToPlay"]
+[node name="Space2" type="RichTextLabel" parent="ColorRect/HowToPlay"]
 modulate = Color( 0.0705882, 0.180392, 0.411765, 1 )
-margin_left = 77.0
-margin_top = 98.0
-margin_right = 226.0
-margin_bottom = 139.0
+margin_left = 66.0
+margin_top = 68.0
+margin_right = 309.0
+margin_bottom = 109.0
 custom_fonts/normal_font = SubResource( 3 )
-text = "Cooking:
+text = "Grab Inventory
+"
+scroll_active = false
+
+[node name="Space3" type="RichTextLabel" parent="ColorRect/HowToPlay"]
+modulate = Color( 0.180392, 0.054902, 0.890196, 1 )
+margin_left = 115.0
+margin_top = 116.0
+margin_right = 295.0
+margin_bottom = 157.0
+custom_fonts/normal_font = SubResource( 3 )
+text = "On-Click
 "
 scroll_active = false
 
 [node name="Interact" type="RichTextLabel" parent="ColorRect/HowToPlay"]
 modulate = Color( 0.0705882, 0.180392, 0.411765, 1 )
-margin_left = 441.0
-margin_top = 99.0
-margin_right = 580.0
-margin_bottom = 140.0
+margin_left = 414.0
+margin_top = 109.0
+margin_right = 553.0
+margin_bottom = 150.0
 custom_fonts/normal_font = SubResource( 3 )
 text = "Interact:"
 scroll_active = false
@@ -210,5 +215,10 @@ texture = ExtResource( 9 )
 position = Vector2( 938, 50 )
 scale = Vector2( 0.477326, 0.428828 )
 texture = ExtResource( 9 )
+
+[node name="Boing" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 10 )
+autoplay = true
+max_distance = 1.0
 
 [connection signal="pressed" from="ColorRect/ButtonStart/Button" to="ColorRect/ButtonStart/Button" method="_on_Button_pressed"]
