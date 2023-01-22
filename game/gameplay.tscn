@@ -39,4 +39,5 @@ shape = SubResource( 2 )
 
 [connection signal="plyerTakingOrder" from="Node" to="." method="_on_Node_plyerTakingOrder"]
 [connection signal="timeout" from="customerTimer" to="." method="_on_customerTimer_timeout"]
+[connection signal="area_entered" from="customerGetingFood" to="." method="_on_customerGetingFood_area_entered"]
 [connection signal="body_entered" from="customerGetingFood" to="." method="_on_customerGetingFood_body_entered"]

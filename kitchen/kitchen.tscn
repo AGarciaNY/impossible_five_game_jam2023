@@ -877,27 +877,6 @@ offset = Vector2( 1.43799, -92.8367 )
 [node name="SkeletonPlayer" parent="." instance=ExtResource( 10 )]
 position = Vector2( 140.927, 353.672 )
 
-[node name="Left_Arm" parent="SkeletonPlayer/YSort" index="0"]
-bones = [ "hip", PoolRealArray( 0, 0, 0, 0, 0 ), "hip/chest", PoolRealArray( 0, 0, 0, 0, 0 ), "hip/chest/Head", PoolRealArray( 0, 0, 0, 0, 0 ), "hip/chest/Arm_Left", PoolRealArray( 0.5, 0.5, 0.5, 0.5, 0.5 ), "hip/chest/Arm_Right", PoolRealArray( 0, 0, 0, 0, 0 ), "hip/Leg_Right", PoolRealArray( 0, 0, 0, 0, 0 ), "hip/Leg_Left", PoolRealArray( 0, 0, 0, 0, 0 ) ]
-
-[node name="Right_Arm" parent="SkeletonPlayer/YSort" index="1"]
-bones = [ "hip", PoolRealArray( 0, 0, 0, 0, 0 ), "hip/chest", PoolRealArray( 0, 0, 0, 0, 0 ), "hip/chest/Head", PoolRealArray( 0, 0, 0, 0, 0 ), "hip/chest/Arm_Left", PoolRealArray( 0, 0, 0, 0, 0 ), "hip/chest/Arm_Right", PoolRealArray( 0.5, 0.5, 0.5, 0.5, 0.5 ), "hip/Leg_Right", PoolRealArray( 0, 0, 0, 0, 0 ), "hip/Leg_Left", PoolRealArray( 0, 0, 0, 0, 0 ) ]
-
-[node name="Body" parent="SkeletonPlayer/YSort" index="2"]
-bones = [ "hip", PoolRealArray( 0, 0, 0, 0 ), "hip/chest", PoolRealArray( 1, 1, 1, 1 ), "hip/chest/Head", PoolRealArray( 0, 0, 0, 0 ), "hip/chest/Arm_Left", PoolRealArray( 0, 0, 0, 0 ), "hip/chest/Arm_Right", PoolRealArray( 0, 0, 0, 0 ), "hip/Leg_Right", PoolRealArray( 0, 0, 0, 0 ), "hip/Leg_Left", PoolRealArray( 0, 0, 0, 0 ) ]
-
-[node name="Right_Leg" parent="SkeletonPlayer/YSort" index="3"]
-bones = [ "hip", PoolRealArray( 0, 0, 0, 0 ), "hip/chest", PoolRealArray( 0, 0, 0, 0 ), "hip/chest/Head", PoolRealArray( 0, 0, 0, 0 ), "hip/chest/Arm_Left", PoolRealArray( 0, 0, 0, 0 ), "hip/chest/Arm_Right", PoolRealArray( 0, 0, 0, 0 ), "hip/Leg_Right", PoolRealArray( 0.5, 0.5, 0.5, 0.5 ), "hip/Leg_Left", PoolRealArray( 0, 0, 0, 0 ) ]
-
-[node name="Left_Leg" parent="SkeletonPlayer/YSort" index="4"]
-bones = [ "hip", PoolRealArray( 0, 0, 0, 0, 0 ), "hip/chest", PoolRealArray( 0, 0, 0, 0, 0 ), "hip/chest/Head", PoolRealArray( 0, 0, 0, 0, 0 ), "hip/chest/Arm_Left", PoolRealArray( 0, 0, 0, 0, 0 ), "hip/chest/Arm_Right", PoolRealArray( 0, 0, 0, 0, 0 ), "hip/Leg_Right", PoolRealArray( 0, 0, 0, 0, 0 ), "hip/Leg_Left", PoolRealArray( 0.5, 0.5, 0.5, 0.5, 0.5 ) ]
-
-[node name="Head" parent="SkeletonPlayer/YSort" index="5"]
-bones = [ "hip", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "hip/chest", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "hip/chest/Head", PoolRealArray( 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1, 1 ), "hip/chest/Arm_Left", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "hip/chest/Arm_Right", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "hip/Leg_Right", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "hip/Leg_Left", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ) ]
-
-[node name="Face" parent="SkeletonPlayer/YSort/Head" index="0"]
-bones = [ "hip", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ), "hip/chest", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ), "hip/chest/Head", PoolRealArray( 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5 ), "hip/chest/Arm_Left", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ), "hip/chest/Arm_Right", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ), "hip/Leg_Right", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ), "hip/Leg_Left", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ) ]
-
 [node name="Camera2D" parent="SkeletonPlayer" index="4"]
 position = Vector2( 226.292, -549.022 )
 current = true

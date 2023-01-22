@@ -47,3 +47,8 @@ func _on_Node_plyerTakingOrder():
 func _on_customerGetingFood_body_entered(body):
 	print(body)
 	pass # Replace with function body.
+
+
+func _on_customerGetingFood_area_entered(area):
+	print(area)
+	pass # Replace with function body.
